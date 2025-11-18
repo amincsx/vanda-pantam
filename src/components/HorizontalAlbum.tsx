@@ -10,7 +10,7 @@ export default function HorizontalAlbum() {
   const [viewportWidth, setViewportWidth] = useState(0);
   const isMobile = viewportWidth < 768;
 
-  // List of all image files from public folder
+  // Reduced images for faster initial loading (show first 8 images)
   const images = [
     '2.webp',
     '3.webp',
@@ -19,11 +19,7 @@ export default function HorizontalAlbum() {
     '6.webp',
     '7.webp',
     '8.webp',
-    '9.webp',
-    '10.webp',
-    '11.webp',
-    '12.webp',
-    '13.webp'
+    '9.webp'
   ];
 
   // Persian texts
@@ -189,8 +185,9 @@ export default function HorizontalAlbum() {
                 alt={`Album image ${index + 1}`}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 300px, 600px"
+                sizes="(max-width: 768px) 250px, 500px"
                 priority={index < 2}
+                loading={index < 2 ? 'eager' : 'lazy'}
               />
             </div>
           ))}

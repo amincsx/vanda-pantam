@@ -97,7 +97,7 @@ export default function TopBgVideo() {
           autoPlay
           loop={false}
           controls={false}
-          preload="metadata"
+          preload="none"
           poster="/1080 pic.jpg"
           onLoadStart={() => console.log("Video loading started")}
           onLoadedData={() => console.log("Video loaded")}
@@ -119,10 +119,11 @@ export default function TopBgVideo() {
             src="/1080 pic.jpg"
             alt="Freeze frame"
             fill
-            className={`object-cover transition-all duration-1000 ease-in-out ${showFreezeImage ? 'opacity-100' : 'opacity-0'}`}
+            className={`transition-all duration-1000 ease-in-out ${showFreezeImage ? 'opacity-100' : 'opacity-0'}`}
             style={{
-              objectFit: isMobile ? 'cover' : (isLargeScreen ? 'cover' : 'cover'),
+              objectFit: 'cover',
               objectPosition: 'center',
+              transform: 'scale(1.05)',
               filter: `blur(${isBlurred ? '8px' : '0px'}) drop-shadow(0 0 40px rgba(0, 0, 0, 0.6))`
             }}
             sizes="100vw"

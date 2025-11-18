@@ -25,7 +25,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of images for mobile album
+  // Array of images for mobile album (optimized for faster loading)
   const images = [
     '/2.webp',
     '/3.webp',
@@ -34,12 +34,7 @@ export default function Home() {
     '/6.webp',
     '/7.webp',
     '/8.webp',
-    '/9.webp',
-    '/10.webp',
-    '/11.webp',
-    '/12.webp',
-    '/13.webp',
-    '/1.webp'
+    '/9.webp'
   ];
 
   useEffect(() => {
@@ -214,8 +209,9 @@ export default function Home() {
                         alt={`Album ${index + 1}`}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        sizes="(max-width: 768px) 100vw, 500px"
                         priority={index === 0}
+                        loading={index === 0 ? 'eager' : 'lazy'}
                       />
                     </div>
                   ))}
