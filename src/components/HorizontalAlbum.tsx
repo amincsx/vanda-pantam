@@ -55,10 +55,10 @@ export default function HorizontalAlbum() {
       // Not first visit - show album immediately
       setIsVisible(true);
     } else {
-      // First visit - show album after 2 seconds (after logo and nav animations)
+      // First visit - show album after 500ms (faster than before)
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 2000);
+      }, 500);
 
       return () => clearTimeout(timer);
     }
@@ -103,7 +103,7 @@ export default function HorizontalAlbum() {
     const animate = () => {
       // Smooth interpolation between current and target progress
       const diff = targetProgress - currentProgress;
-      const damping = 0.08; // Slightly increased for faster response
+      const damping = 0.15; // Increased for faster response
 
       currentProgress += diff * damping;
       setScrollProgress(currentProgress);
@@ -190,8 +190,8 @@ export default function HorizontalAlbum() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 300px, 600px"
-                priority={index < 2}
-                loading={index < 2 ? 'eager' : 'lazy'}
+                priority={index < 4}
+                loading={index < 4 ? 'eager' : 'lazy'}
               />
             </div>
           ))}

@@ -22,21 +22,42 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   }
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const images = [product.images.front, product.images.side, product.images.back, product.images.sideView];
   const imageLabels = ['front view', '80%', '60%', 'side view'];
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const width = rect.width;
-    const percentage = x / width;
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
 
-    if (percentage < 0.33) {
-      setCurrentImageIndex(0); // front
-    } else if (percentage < 0.66) {
-      setCurrentImageIndex(1); // side
-    } else {
-      setCurrentImageIndex(2); // back
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0); // reset
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextImage();
+    } else if (isRightSwipe) {
+      prevImage();
     }
   };
 
@@ -65,12 +86,18 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             {/* Product Images */}
             <div className="space-y-4 sm:space-y-6">
               {/* Main Image */}
-              <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden">
+              <div
+                className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-white/5 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 <Image
                   src={images[currentImageIndex]}
                   alt={`${product.name} - ${imageLabels[currentImageIndex]}`}
                   fill
                   className="object-contain transition-all duration-500 ease-in-out"
+                  priority
                 />
 
                 {/* Image Navigation Dots */}
@@ -110,6 +137,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                       alt={`${product.name} thumbnail ${index + 1}`}
                       fill
                       className="object-contain"
+                      loading="eager"
                     />
                   </button>
                 ))}

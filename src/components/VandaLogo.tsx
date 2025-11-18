@@ -61,7 +61,7 @@ export default function VandaLogo() {
           className="font-bold bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent transition-all duration-[3000ms] ease-in-out"
           style={{
             fontSize: isMobile
-              ? (isInPosition ? '1.875rem' : '3.75rem') // text-3xl : text-6xl
+              ? (isInPosition ? '1.5rem' : '3rem') // Smaller: text-2xl : text-5xl
               : isLargeScreen
                 ? (isInPosition ? '4.5rem' : '8rem') // much larger for large screens
                 : (isInPosition ? '2.25rem' : '4.5rem'), // text-4xl : text-8xl
