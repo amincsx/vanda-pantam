@@ -216,7 +216,6 @@ export default function Home() {
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 600px"
                         priority={index === 0}
-                        loading={index === 0 ? 'eager' : 'lazy'}
                       />
                     </div>
                   ))}

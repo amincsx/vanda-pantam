@@ -126,8 +126,6 @@ export default function TopBgVideo() {
               filter: `blur(${isBlurred ? '8px' : '0px'}) drop-shadow(0 0 40px rgba(0, 0, 0, 0.6))`
             }}
             sizes="100vw"
-            priority
-            loading="eager"
           />
         )}
 

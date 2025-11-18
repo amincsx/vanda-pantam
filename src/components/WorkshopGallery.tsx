@@ -58,7 +58,6 @@ export default function WorkshopGallery() {
                                 fill
                                 className="object-cover transition-all duration-700 group-hover:scale-110"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                loading={index < 6 ? 'eager' : 'lazy'}
                             />
 
                             {/* Overlay */}
@@ -100,7 +99,6 @@ export default function WorkshopGallery() {
                                 fill
                                 className="object-contain rounded-lg"
                                 sizes="90vw"
-                                priority
                             />
                         </div>
 

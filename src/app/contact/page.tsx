@@ -199,7 +199,7 @@ export default function Contact() {
                   alt="Our workshop - where handpans are born"
                   fill
                   className="object-cover"
-                  priority
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">

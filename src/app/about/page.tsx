@@ -51,7 +51,6 @@ export default function About() {
                   alt="Vanda workshop"
                   fill
                   className="object-cover"
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -64,7 +63,6 @@ export default function About() {
                   alt="Handpan tuning"
                   fill
                   className="object-cover"
-                  loading="lazy"
                 />
               </div>
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 order-1 md:order-2">
@@ -99,7 +97,6 @@ export default function About() {
                   alt="Workshop tools"
                   fill
                   className="object-cover"
-                  loading="lazy"
                 />
               </div>
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 order-1 md:order-2">
@@ -122,7 +119,6 @@ export default function About() {
                   alt="Finished handpans"
                   fill
                   className="object-cover"
-                  loading="lazy"
                 />
               </div>
             </div>
