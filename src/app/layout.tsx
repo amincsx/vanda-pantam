@@ -49,6 +49,7 @@ export default function RootLayout({
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-[9999] bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 touch-target"
           aria-label="Contact us on WhatsApp"
+          title="WhatsApp: +98 919 607 5854"
         >
           <svg
             className="w-6 h-6 sm:w-7 sm:h-7"

@@ -152,19 +152,26 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
               {/* Action Buttons */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-6 space-y-3">
-                <button
-                  className={`w-full py-3 px-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 shadow-lg touch-target ${product.inStock
+                <a
+                  href={`https://wa.me/989196075854?text=Hi, I'm interested in ordering ${encodeURIComponent(product.name)} - $${product.price}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full py-3 px-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 shadow-lg touch-target text-center ${product.inStock
                     ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-gray-900 hover:shadow-xl'
-                    : 'bg-gray-600/50 text-gray-400 cursor-not-allowed backdrop-blur-sm'
+                    : 'bg-gray-600/50 text-gray-400 cursor-not-allowed backdrop-blur-sm pointer-events-none'
                     }`}
-                  disabled={!product.inStock}
                 >
-                  {product.inStock ? 'Add to Cart' : 'Out of Stock'}
-                </button>
+                  {product.inStock ? 'Order on WhatsApp' : 'Out of Stock'}
+                </a>
 
-                <button className="w-full py-3 px-4 border border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 hover:border-yellow-400 rounded-lg font-semibold transition-all duration-200 backdrop-blur-sm text-sm touch-target">
+                <a
+                  href={`https://wa.me/989196075854?text=Hi, I'd like to discuss a custom order for ${encodeURIComponent(product.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 px-4 border border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 hover:border-yellow-400 rounded-lg font-semibold transition-all duration-200 backdrop-blur-sm text-sm touch-target text-center"
+                >
                   Contact for Custom Order
-                </button>
+                </a>
               </div>
             </div>
           </div>

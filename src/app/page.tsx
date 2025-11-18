@@ -125,7 +125,9 @@ export default function Home() {
             >
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/vanda_pantam/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group transition-all duration-300 hover:scale-110 touch-target"
               >
                 <svg
@@ -139,8 +141,11 @@ export default function Home() {
 
               {/* WhatsApp */}
               <a
-                href="#"
+                href="https://wa.me/989196075854"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group transition-all duration-300 hover:scale-110 touch-target"
+                title="+98 919 607 5854"
               >
                 <svg
                   className="w-6 h-6 sm:w-5 sm:h-5 text-white/40 group-hover:text-white/60 transition-colors duration-300"

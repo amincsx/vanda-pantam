@@ -17,6 +17,7 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
     const [isPlayingSequence, setIsPlayingSequence] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const svgRef = useRef<SVGSVGElement>(null);
+    const lastPlayedRef = useRef<{ [key: string]: number }>({});
 
     // Note mappings for each product - all audio files now in /sounds folder
     const noteConfigs: { [key: number]: { audioPath: string; notes: NoteMapping } } = {
@@ -159,6 +160,15 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
 
     // Simple, direct audio playback - WORKS EVERY TIME
     const playNote = (noteId: string) => {
+        // Debounce: prevent same note from playing within 200ms
+        const now = Date.now();
+        const lastPlayed = lastPlayedRef.current[noteId] || 0;
+        if (now - lastPlayed < 200) {
+            console.log(`⏭️ Skipping duplicate play of ${noteId}`);
+            return;
+        }
+        lastPlayedRef.current[noteId] = now;
+
         console.log(`🎵 Playing: ${noteId}`);
 
         // Visual feedback
@@ -179,6 +189,11 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
     };
 
     const handleNoteClick = (event: React.MouseEvent<SVGElement>) => {
+        // Don't process if this is actually a touch event converted to mouse
+        if ((event.nativeEvent as any).sourceCapabilities?.firesTouchEvents) {
+            return;
+        }
+
         event.preventDefault();
         event.stopPropagation();
 
@@ -200,10 +215,13 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
 
     // Touch event handler for mobile devices
     const handleNoteTouch = (event: React.TouchEvent<SVGElement>) => {
+        // Prevent default to stop mouse events from firing
         event.preventDefault();
         event.stopPropagation();
 
         const touch = event.touches[0];
+        if (!touch) return;
+
         const target = document.elementFromPoint(touch.clientX, touch.clientY) as SVGElement;
 
         if (target) {
@@ -622,8 +640,6 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                             className="w-full h-full touch-none"
                             onMouseOver={handleNoteHover}
                             onMouseLeave={handleNoteLeave}
-                            onTouchStart={handleNoteTouch}
-                            onTouchMove={handleNoteTouch}
                         >
                             {/* Render notes based on product */}
                             {productId === 1 ? (

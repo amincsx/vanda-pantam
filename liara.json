@@ -1,12 +1,12 @@
 {
-  "app": "vanda",
-  "port": 3000,
-  "build": {
-    "location": "iran"
-  },
-  "disks": [],
-  "next": {
-    "mirror": false,
-    "modifyConfig": false
-  }
+    "app": "vanda",
+    "port": 3000,
+    "build": {
+        "location": "iran"
+    },
+    "disks": [],
+    "next": {
+        "mirror": false,
+        "modifyConfig": false
+    }
 }

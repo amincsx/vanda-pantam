@@ -31,7 +31,7 @@ export default function About() {
                 animation: 'shine 8s linear infinite'
               }}
             >
-              About / درباره وندا پنتام
+              About
             </h1>
           </div>
 
