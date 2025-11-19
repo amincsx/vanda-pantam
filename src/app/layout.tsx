@@ -21,8 +21,51 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Vanda",
-  description: "A Next.js application",
+  title: "Vanda - Handpan Instruments",
+  description: "Premium handmade handpan instruments crafted with precision and passion. Explore our collection of D Kurd, C Major, A Minor Galaxy scales and more.",
+  keywords: ["handpan", "hang drum", "percussion", "music instruments", "D Kurd", "handmade"],
+  authors: [{ name: "Vanda Handpan" }],
+  creator: "Vanda Handpan",
+  publisher: "Vanda Handpan",
+  openGraph: {
+    title: "Vanda - Handpan Instruments",
+    description: "Premium handmade handpan instruments crafted with precision and passion.",
+    url: "https://vanda-handpan.com",
+    siteName: "Vanda Handpan",
+    images: [
+      {
+        url: "/icon.webp",
+        width: 1200,
+        height: 630,
+        alt: "Vanda Handpan Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vanda - Handpan Instruments",
+    description: "Premium handmade handpan instruments crafted with precision and passion.",
+    images: ["/icon.webp"],
+  },
+  icons: {
+    icon: [
+      { url: "/icon.webp", sizes: "32x32", type: "image/webp" },
+      { url: "/icon.webp", sizes: "16x16", type: "image/webp" },
+    ],
+    shortcut: "/icon.webp",
+    apple: [
+      { url: "/icon.webp", sizes: "180x180", type: "image/webp" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/icon.webp",
+      },
+    ],
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -34,6 +77,23 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        
+        {/* Favicon and Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.webp" type="image/webp" />
+        <link rel="shortcut icon" href="/icon.webp" type="image/webp" />
+        <link rel="apple-touch-icon" href="/icon.webp" />
+        <link rel="apple-touch-icon-precomposed" href="/icon.webp" />
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* Theme colors */}
+        <meta name="theme-color" content="#FFD700" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-TileImage" content="/icon.webp" />
+        
+        {/* Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
           rel="stylesheet"
