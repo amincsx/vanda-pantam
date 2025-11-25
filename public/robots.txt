@@ -10,7 +10,7 @@ Disallow: /_next/
 Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://vandahandpan.com/sitemap.xml
+Sitemap: https://vandapantam.com/sitemap.xml
 
 # Crawl-delay (optional, helps prevent server overload)
 Crawl-delay: 1

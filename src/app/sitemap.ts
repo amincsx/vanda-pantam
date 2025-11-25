@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://vanda-handpan.com';
+    const baseUrl = 'https://vandapantam.com';
     const currentDate = new Date();
 
     return [
