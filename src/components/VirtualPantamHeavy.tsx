@@ -425,7 +425,7 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
     }
 
     return (
-        <div 
+        <div
             className="bg-white/5 backdrop-blur-md border border-yellow-500/20 rounded-xl p-8 relative"
             onClick={activateAudioContext} // Activate audio context on any click
         >
