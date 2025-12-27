@@ -14,8 +14,8 @@ export default function Order() {
           <svg className="w-4 h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span className="hidden sm:inline">Home</span>
-          <span className="sm:hidden">Back</span>
+          <span className="hidden sm:inline">خانه</span>
+          <span className="sm:hidden">بازگشت</span>
         </Link>
       </div>
 
@@ -41,17 +41,16 @@ export default function Order() {
           <div className="mt-12 sm:mt-16 text-center">
             <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-yellow-500/20 shadow-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
-                Virtual <span className="text-yellow-400">Pantam</span>
+                پنتام <span className="text-yellow-400">مجازی</span>
               </h2>
               <p className="text-gray-300 text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
-                Experience our interactive virtual handpan where you can play
-                and explore different scales and sounds online.
+                هندپن مجازی تعاملی ما را تجربه کنید که در آن می‌توانید گام‌ها و صداهای مختلف را آنلاین بنوازید و کاوش کنید.
               </p>
               <a
                 href="/virtual-pantam"
                 className="inline-block bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl touch-target"
               >
-                Try Virtual Pantam
+                امتحان پنتام مجازی
               </a>
             </div>
           </div>
@@ -60,4 +59,3 @@ export default function Order() {
     </div>
   );
 }
-

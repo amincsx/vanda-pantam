@@ -1,47 +1,44 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
+import { Vazirmatn, Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const vazirmatn = Vazirmatn({
+  variable: "--font-vazirmatn",
+  subsets: ["arabic", "latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   display: "swap",
-});
-
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vanda-handpan.com'),
   title: {
-    default: "Vanda Handpan - Premium Handmade Instruments | D Kurd, C Major & Custom Scales",
-    template: "%s | Vanda Handpan"
+    default: "واندا هندپن - سازهای دست‌ساز لوکس | گام‌های دی کورد، سی ماژور و سفارشی",
+    template: "%s | واندا هندپن"
   },
-  description: "Premium handmade handpan instruments crafted with precision and passion. Explore our collection of D Kurd, C Major, A Minor Galaxy scales and more. Custom tunings available.",
+  description: "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق. مجموعه ما شامل گام‌های دی کورد، سی ماژور، گلکسی لا مینور و بیشتر است. کوک‌های سفارشی نیز موجود است.",
   keywords: [
-    "handpan",
-    "hang drum",
-    "percussion instruments",
-    "music instruments",
-    "D Kurd handpan",
-    "C Major handpan",
-    "A Minor Galaxy",
-    "handmade instruments",
-    "custom handpan",
-    "handpan maker",
-    "steel tongue drum",
-    "Vanda handpan",
-    "buy handpan",
-    "handpan for sale"
+    "هندپن",
+    "هنگ درام",
+    "سازهای کوبه‌ای",
+    "سازهای موسیقی",
+    "هندپن دی کورد",
+    "هندپن سی ماژور",
+    "گلکسی لا مینور",
+    "سازهای دست‌ساز",
+    "هندپن سفارشی",
+    "سازنده هندپن",
+    "تانگ درام استیل",
+    "واندا هندپن",
+    "خرید هندپن",
+    "فروش هندپن",
+    "قیمت هندپن"
   ],
   authors: [{ name: "Vanda Handpan", url: "https://vanda-handpan.com" }],
   creator: "Vanda Handpan",
@@ -55,8 +52,8 @@ export const metadata: Metadata = {
     canonical: "https://vanda-handpan.com",
   },
   openGraph: {
-    title: "Vanda Handpan - Premium Handmade Instruments",
-    description: "Premium handmade handpan instruments crafted with precision and passion. D Kurd, C Major, A Minor Galaxy scales and custom tunings available.",
+    title: "واندا هندپن - سازهای دست‌ساز لوکس",
+    description: "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق. گام‌های دی کورد، سی ماژور، گلکسی لا مینور و کوک‌های سفارشی.",
     url: "https://vanda-handpan.com",
     siteName: "Vanda Handpan",
     images: [
@@ -64,16 +61,16 @@ export const metadata: Metadata = {
         url: "/icon.webp",
         width: 1200,
         height: 630,
-        alt: "Vanda Handpan - Premium Handmade Instruments",
+        alt: "واندا هندپن - سازهای دست‌ساز لوکس",
       },
     ],
-    locale: "en_US",
+    locale: "fa_IR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vanda Handpan - Premium Handmade Instruments",
-    description: "Premium handmade handpan instruments crafted with precision and passion.",
+    title: "واندا هندپن - سازهای دست‌ساز لوکس",
+    description: "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق.",
     images: ["/icon.webp"],
   },
   robots: {
@@ -117,7 +114,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
@@ -134,16 +131,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#FFD700" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/icon.webp" />
-
-        {/* Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
-          rel="stylesheet"
-          crossOrigin="anonymous"
-        />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} antialiased`}
+        className={`${vazirmatn.variable} ${poppins.variable} antialiased font-sans font-light`}
+        style={{ fontFamily: 'var(--font-vazirmatn), var(--font-poppins), sans-serif' }}
       >
         {children}
 
@@ -152,9 +143,9 @@ export default function RootLayout({
           href="https://wa.me/989196075854"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-[9999] bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 touch-target"
-          aria-label="Contact us on WhatsApp"
-          title="WhatsApp: +98 919 607 5854"
+          className="fixed bottom-6 left-6 z-[9999] bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 touch-target"
+          aria-label="تماس با ما در واتس‌اپ"
+          title="واتس‌اپ: ۰۹۱۹۶۰۷۵۸۵۴"
         >
           <svg
             className="w-6 h-6 sm:w-7 sm:h-7"

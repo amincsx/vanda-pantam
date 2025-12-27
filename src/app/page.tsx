@@ -96,8 +96,8 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Vanda Handpan",
-            "description": "Premium handmade handpan instruments crafted with precision and passion",
+            "name": "واندا هندپن",
+            "description": "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق",
             "url": "https://vanda-handpan.com",
             "telephone": "+989196075854",
             "image": "https://vanda-handpan.com/icon.webp",
@@ -136,23 +136,12 @@ export default function Home() {
             className={`text-3xl sm:text-4xl md:text-7xl 3xl:text-9xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent animate-shine transition-all duration-[2000ms] ease-in-out ${isTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             style={{
-              fontFamily: "'Waterfall', cursive",
+              fontFamily: "var(--font-lalezar), cursive",
               backgroundSize: '200% auto',
               animation: 'shine 8s linear infinite'
             }}
           >
-            The true instrument is you,
-            <br />
-            <h1
-              className="text-2xl sm:text-3xl md:text-5xl 3xl:text-7xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent animate-shine mt-2"
-              style={{
-                fontFamily: "'Waterfall', cursive",
-                backgroundSize: '200% auto',
-                animation: 'shine 8s linear infinite'
-              }}
-            >
-              welcome to vanda
-            </h1>
+
 
             {/* Social Media Icons */}
             <div
@@ -216,7 +205,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="relative -mt-20">
+          <div className="relative -mt-20" style={{ marginRight: '-600px' }}>
             {/* Glass morphism container */}
             <div className="relative bg-black/20 backdrop-blur-md rounded-none shadow-2xl overflow-visible">
               {/* Album container with horizontal sliding */}

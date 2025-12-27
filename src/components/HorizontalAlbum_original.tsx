@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -67,7 +67,7 @@ export default function HorizontalAlbum() {
     // Automatic looping animation instead of scroll-based
     let animationFrameId: number | null = null;
     let startTime: number | null = null;
-    const duration = 30000; // 30 seconds for full cycle
+    const duration = 20000; // 20 seconds for full cycle
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -94,17 +94,13 @@ export default function HorizontalAlbum() {
     };
   }, [isVisible]);
 
-  // Display images in normal order
-  const displayImages = [...images];
-
   return (
     <>
       {/* Ultra-light Album Section - Only scroll movement and borders */}
       <div
-        className={`absolute z-20 transition-all duration-1000 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
+        className={`absolute left-0 right-0 z-20 transition-all duration-1000 ease-in-out overflow-visible ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
           }`}
         style={{
-          left: '-540px',
           height: isMobile ? '160px' : '280px',
           // Smart positioning based on viewport dimensions to prevent overlap
           top: (() => {
@@ -113,77 +109,74 @@ export default function HorizontalAlbum() {
 
             if (viewportWidth >= 3840) {
               // 4K+ screens: position slightly lower
-              return `calc(70vh - ${baseOffset}px)`;
+              return `calc(80vh - ${baseOffset}px)`;
             } else if (viewportWidth >= 2560) {
               // 1440p+ screens: adjust positioning
-              return `calc(82vh - ${Math.min(baseOffset, 60)}px)`;
+              return `calc(90vh - ${Math.min(baseOffset, 60)}px)`;
             } else if (viewportWidth >= 1920) {
               // 1080p+ screens: fine-tune position
-              return `calc(90vh - 50px)`;
+              return `calc(100vh - 50px)`;
             } else {
               // Standard screens
-              return `calc(107vh - 40px)`;
+              return `calc(120vh - 40px)`;
             }
           })()
         }}
       >
-        {/* Outer container for borders */}
-        <div className="relative w-full h-full overflow-visible">
-          {/* Album container with scroll-based movement */}
-          <div
-            className="flex relative z-50 justify-start overflow-hidden"
-            style={{
-              width: `${images.length * (isMobile ? 300 : 600)}px`,
-              height: isMobile ? '160px' : '280px',
-              transform: `translate3d(${scrollProgress * Math.min(0, viewportWidth - images.length * (isMobile ? 300 : 600)) * 0.7}px, 0, 0)`,
-              gap: '0px',
-              padding: '0px',
-              willChange: 'transform'
-            }}
-          >
-            {displayImages.map((image, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 relative"
-                style={{
-                  width: isMobile ? '300px' : '600px',
-                  height: isMobile ? '160px' : '280px',
-                  marginLeft: index > 0 ? '-2px' : '0px'
-                }}
-              >
-                {/* Simple image without any effects */}
-                <Image
-                  src={`/${image}`}
-                  alt={`تصویر آلبوم ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 250px, 500px"
-                  priority={index < 2}
-                  loading={index < 2 ? 'eager' : 'lazy'}
-                />
-              </div>
-            ))}
-          </div>
+        {/* Glass borders for top and bottom */}
+        <div
+          className="absolute left-0 right-0 z-40 pointer-events-none"
+          style={{
+            height: '7px',
+            top: '-5px',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
+            backdropFilter: 'blur(5px)'
+          }}
+        />
+        <div
+          className="absolute left-0 right-0 z-40 pointer-events-none"
+          style={{
+            height: '7px',
+            bottom: '-5px',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
+            backdropFilter: 'blur(5px)'
+          }}
+        />
 
-          {/* Glass borders - positioned on outer container */}
-          <div
-            className="absolute left-0 right-0 z-50 pointer-events-none"
-            style={{
-              height: '7px',
-              top: '-5px',
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
-              backdropFilter: 'blur(5px)'
-            }}
-          />
-          <div
-            className="absolute left-0 right-0 z-50 pointer-events-none"
-            style={{
-              height: '7px',
-              bottom: '-6px',
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 70%, transparent 100%)',
-              backdropFilter: 'blur(5px)'
-            }}
-          />
+        {/* Album container with scroll-based movement */}
+        <div
+          className="flex relative z-50"
+          style={{
+            width: `${images.length * (isMobile ? 300 : 600)}px`,
+            height: isMobile ? '160px' : '280px',
+            transform: `translate3d(${scrollProgress * Math.min(0, viewportWidth - images.length * (isMobile ? 300 : 600)) * 0.3}px, 0, 0)`,
+            gap: '0px',
+            padding: '0px',
+            willChange: 'transform'
+          }}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 relative"
+              style={{
+                width: isMobile ? '300px' : '600px',
+                height: isMobile ? '160px' : '280px',
+                marginLeft: index > 0 ? '-2px' : '0px'
+              }}
+            >
+              {/* Simple image without any effects */}
+              <Image
+                src={`/${image}`}
+                alt={`Album image ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 250px, 500px"
+                priority={index < 2}
+                loading={index < 2 ? 'eager' : 'lazy'}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </>

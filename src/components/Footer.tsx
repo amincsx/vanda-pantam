@@ -5,54 +5,54 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Vanda
+              واندا
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              A modern Next.js application built with TypeScript, Tailwind CSS, and best practices.
+              سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق.
             </p>
           </div>
-          
+
           <div>
             <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
-              Quick Links
+              دسترسی سریع
             </h4>
             <ul className="space-y-2">
               <li>
                 <a href="/" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                  Home
+                  خانه
                 </a>
               </li>
               <li>
                 <a href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                  About
+                  درباره ما
                 </a>
               </li>
               <li>
                 <a href="/contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                  Contact
+                  تماس
                 </a>
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
-              Resources
+              منابع
             </h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="https://nextjs.org/docs" 
+                <a
+                  href="https://nextjs.org/docs"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Next.js Docs
+                  مستندات Next.js
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://tailwindcss.com/docs" 
+                <a
+                  href="https://tailwindcss.com/docs"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -63,10 +63,10 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
-            © 2024 Vanda. Built with Next.js and Tailwind CSS.
+            © ۲۰۲۴ واندا. طراحی شده با Next.js و Tailwind CSS.
           </p>
         </div>
       </div>

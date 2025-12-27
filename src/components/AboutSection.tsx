@@ -39,33 +39,33 @@ export default function AboutSection() {
                     >
                         <h2
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent"
-                            style={{ fontFamily: "'Waterfall', cursive" }}
+                            style={{ fontFamily: "var(--font-lalezar), cursive" }}
                         >
-                            The Art of Handpan
+                            هنر هندپن
                         </h2>
 
                         <div className="space-y-3 sm:space-y-4 text-gray-300 text-base sm:text-lg leading-relaxed">
                             <p>
-                                The handpan is more than just a musical instrument—it's a gateway to meditation,
-                                healing, and profound musical expression.
+                                هندپن چیزی فراتر از یک ساز موسیقی است - دروازه‌ای به سوی مدیتیشن،
+                                شفا و بیان عمیق موسیقی است.
                             </p>
 
                             <p>
-                                Born from the revolutionary Hang drum concept in 2000, handpans have captured
-                                hearts worldwide with their ethereal, therapeutic tones.
+                                متولد شده از مفهوم انقلابی هنگ درام در سال ۲۰۰۰، هندپن‌ها با طنین‌های اثیری و درمانی خود
+                                قلب‌های جهانیان را تسخیر کرده‌اند.
                             </p>
 
                             <p>
-                                Each handpan consists of two carefully crafted metal half-shells, forming a
-                                resonant chamber with precisely tuned tone fields. The center note, surrounded
-                                by a circle of harmonically related tones, creates scales that naturally guide
-                                players into meditative states.
+                                هر هندپن از دو نیم‌پوسته فلزی که با دقت ساخته شده‌اند تشکیل شده است که یک
+                                محفظه طنین‌انداز با میدان‌های صوتی دقیق کوک شده را ایجاد می‌کند. نت مرکزی، که توسط
+                                دایره‌ای از نت‌های هماهنگ احاطه شده است، گام‌هایی را ایجاد می‌کند که به طور طبیعی
+                                نوازنده را به حالت‌های مدیتیشن هدایت می‌کند.
                             </p>
 
                             <p>
-                                At Vanda, we honor this ancient craft while pushing the boundaries of what's
-                                possible. Our instruments are not just tools for music—they're companions
-                                for your journey of self-discovery.
+                                در واندا، ما به این هنر احترام می‌گذاریم و در عین حال مرزهای آنچه ممکن است را
+                                جابجا می‌کنیم. سازهای ما فقط ابزاری برای موسیقی نیستند - آنها همراهانی
+                                برای سفر خودشناسی شما هستند.
                             </p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default function AboutSection() {
                             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
                                 <Image
                                     src="/workshop pics/photo_2025-09-28_14-02-17.jpg"
-                                    alt="Handpan crafting process in our workshop"
+                                    alt="فرآیند ساخت هندپن در کارگاه ما"
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     loading="lazy"

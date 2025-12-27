@@ -47,23 +47,23 @@ export default function CraftsmanshipSection() {
 
     const craftingSteps = [
         {
-            title: "Material Selection",
-            description: "We carefully select premium steel for optimal resonance and durability.",
+            title: "انتخاب مواد",
+            description: "ما با دقت فولاد ممتاز را برای طنین و دوام بهینه انتخاب می‌کنیم.",
             icon: ""
         },
         {
-            title: "Shaping & Forming",
-            description: "Each shell is meticulously shaped using traditional handcrafting techniques.",
+            title: "شکل‌دهی و فرم‌دهی",
+            description: "هر پوسته با استفاده از تکنیک‌های سنتی دست‌ساز با دقت شکل داده می‌شود.",
             icon: ""
         },
         {
-            title: "Tone Field Creation",
-            description: "Precise tuning creates the harmonic relationships that define each scale.",
+            title: "ایجاد میدان صوتی",
+            description: "کوک دقیق روابط هارمونیکی را ایجاد می‌کند که هر گام را تعریف می‌کند.",
             icon: ""
         },
         {
-            title: "Assembly & Tuning",
-            description: "Final assembly and fine-tuning ensure perfect pitch and resonance.",
+            title: "مونتاژ و کوک",
+            description: "مونتاژ نهایی و کوک دقیق، گام و طنین کامل را تضمین می‌کند.",
             icon: ""
         }
     ];
@@ -80,16 +80,15 @@ export default function CraftsmanshipSection() {
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent mb-4 sm:mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
-                        style={{ fontFamily: "'Waterfall', cursive" }}
+                        style={{ fontFamily: "var(--font-lalezar), cursive" }}
                     >
-                        Master Craftsmanship
+                        استادکاری ماهرانه
                     </h2>
                     <p
                         className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-2 sm:px-0 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                     >
-                        Every Vanda handpan is a testament to centuries-old metalworking traditions,
-                        combined with modern precision and an unwavering commitment to sonic perfection.
+                        هر هندپن واندا گواهی بر سنت‌های چند قرنی فلزکاری است که با دقت مدرن و تعهد تزلزل‌ناپذیر به کمال صوتی ترکیب شده است.
                     </p>
                 </div>
 
@@ -105,7 +104,7 @@ export default function CraftsmanshipSection() {
                             <div className="relative aspect-[4/3] sm:aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-gray-800">
                                 <Image
                                     src={workshopImages[currentImage]}
-                                    alt="Workshop craftsmanship"
+                                    alt="استادکاری کارگاه"
                                     fill
                                     className="object-cover transition-opacity duration-1000"
                                 />
@@ -132,7 +131,7 @@ export default function CraftsmanshipSection() {
                                     >
                                         <Image
                                             src={image}
-                                            alt={`Workshop ${index + 1}`}
+                                            alt={`کارگاه ${index + 1}`}
                                             fill
                                             className="object-cover"
                                         />
@@ -169,11 +168,11 @@ export default function CraftsmanshipSection() {
 
                         <div className="mt-5 sm:mt-6 md:mt-8">
                             <h4 className="text-base sm:text-lg font-semibold text-yellow-200 mb-1.5 sm:mb-2">
-                                Quality Guarantee
+                                تضمین کیفیت
                             </h4>
                             <p className="text-sm sm:text-base text-gray-300">
-                                Each Vanda handpan undergoes rigorous testing and comes with our lifetime
-                                craftsmanship guarantee. We stand behind every instrument we create.
+                                هر هندپن واندا تحت آزمایش‌های دقیق قرار می‌گیرد و با ضمانت مادام‌العمر
+                                استادکاری ما همراه است. ما پشت هر سازی که می‌سازیم ایستاده‌ایم.
                             </p>
                         </div>
                     </div>

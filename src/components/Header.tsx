@@ -10,24 +10,24 @@ export default function Header() {
               Vanda
             </Link>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <Link 
-              href="/" 
+          <nav className="hidden md:flex space-x-8" dir="rtl">
+            <Link
+              href="/"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              Home
+              خانه
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              About
+              درباره ما
             </Link>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
-              Contact
+              تماس با ما
             </Link>
           </nav>
         </div>

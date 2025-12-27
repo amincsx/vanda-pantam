@@ -33,11 +33,11 @@ export default function VirtualPantamPage() {
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to Products
+              بازگشت به محصولات
             </Link>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl text-yellow-200 text-center" style={{ fontFamily: "'Waterfall', cursive" }}>
-              Virtual Pantam
+            <h1 className="text-3xl sm:text-4xl md:text-6xl text-yellow-200 text-center" style={{ fontFamily: "var(--font-lalezar), cursive" }}>
+              پنتام مجازی
             </h1>
 
             <div className="hidden sm:block sm:w-32"></div> {/* Spacer for centering on desktop */}
@@ -45,7 +45,7 @@ export default function VirtualPantamPage() {
 
           {/* Product Selector */}
           <div className="mb-6 sm:mb-8">
-            <h2 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-center">Select a Handpan</h2>
+            <h2 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-center">یک هندپن انتخاب کنید</h2>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
               {availableProducts.map((product) => (
                 <button
@@ -71,23 +71,23 @@ export default function VirtualPantamPage() {
           {/* Instructions */}
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-6">
-              <h3 className="text-lg sm:text-xl font-semibold text-yellow-200 mb-3 sm:mb-4">How to Play</h3>
-              <ul className="space-y-2 text-sm sm:text-base text-gray-300">
+              <h3 className="text-lg sm:text-xl font-semibold text-yellow-200 mb-3 sm:mb-4">نحوه نواختن</h3>
+              <ul className="space-y-2 text-sm sm:text-base text-gray-300" dir="rtl">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                  <span>Click or tap on the note circles to play individual notes</span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full ml-3 mt-2 flex-shrink-0"></span>
+                  <span>برای نواختن نت‌های فردی روی دایره‌های نت کلیک یا ضربه بزنید</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                  <span>Each handpan has its unique scale and sound</span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full ml-3 mt-2 flex-shrink-0"></span>
+                  <span>هر هندپن گام و صدای منحصر به فرد خود را دارد</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                  <span>Experiment with different combinations to create beautiful melodies</span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full ml-3 mt-2 flex-shrink-0"></span>
+                  <span>ترکیب‌های مختلف را آزمایش کنید تا ملودی‌های زیبا خلق کنید</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                  <span>Try switching between different handpans to explore various scales</span>
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full ml-3 mt-2 flex-shrink-0"></span>
+                  <span>سعی کنید بین هندپن‌های مختلف جابجا شوید تا گام‌های مختلف را کاوش کنید</span>
                 </li>
               </ul>
             </div>

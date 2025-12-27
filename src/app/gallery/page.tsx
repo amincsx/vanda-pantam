@@ -13,8 +13,8 @@ export default function Gallery() {
           <svg className="w-4 h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span className="hidden sm:inline">Home</span>
-          <span className="sm:hidden">Back</span>
+          <span className="hidden sm:inline">خانه</span>
+          <span className="sm:hidden">بازگشت</span>
         </Link>
       </div>
 
@@ -24,15 +24,15 @@ export default function Gallery() {
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-yellow-200 mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent animate-shine"
             style={{
-              fontFamily: "'Waterfall', cursive",
+              fontFamily: "var(--font-lalezar), cursive",
               backgroundSize: '200% auto',
               animation: 'shine 8s linear infinite'
             }}
           >
-            Gallery
+            گالری
           </h1>
-          <p className="text-yellow-200/80 text-base sm:text-lg md:text-xl" style={{ fontFamily: "'Waterfall', cursive" }}>
-            Behind the Scenes - Workshop Moments
+          <p className="text-yellow-200/80 text-base sm:text-lg md:text-xl" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }}>
+            پشت صحنه - لحظات کارگاه
           </p>
         </div>
 
@@ -42,4 +42,3 @@ export default function Gallery() {
     </div>
   );
 }
-

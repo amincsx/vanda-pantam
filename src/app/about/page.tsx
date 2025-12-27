@@ -13,8 +13,8 @@ export default function About() {
           <svg className="w-4 h-4 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span className="hidden sm:inline">Home</span>
-          <span className="sm:hidden">Back</span>
+          <span className="hidden sm:inline">خانه</span>
+          <span className="sm:hidden">بازگشت</span>
         </Link>
       </div>
 
@@ -26,12 +26,12 @@ export default function About() {
             <h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent mb-4 sm:mb-6"
               style={{
-                fontFamily: "'Waterfall', cursive",
+                fontFamily: "var(--font-lalezar), cursive",
                 backgroundSize: '200% auto',
                 animation: 'shine 8s linear infinite'
               }}
             >
-              About
+              درباره ما
             </h1>
           </div>
 
@@ -41,14 +41,14 @@ export default function About() {
             {/* Section 1 with Image */}
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  Vanda Pentam began its journey in 2017 — where the love for sound transformed the shape of metal.
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-right" dir="rtl">
+                  واندا پنتام سفر خود را در سال ۲۰۱۷ آغاز کرد — جایی که عشق به صدا شکل فلز را تغییر داد.
                 </p>
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src="/workshop pics/IMG_3783.PNG"
-                  alt="Vanda workshop"
+                  alt="کارگاه واندا"
                   fill
                   className="object-cover"
                 />
@@ -60,14 +60,14 @@ export default function About() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden order-2 md:order-1">
                 <Image
                   src="/workshop pics/IMG_3787.PNG"
-                  alt="Handpan tuning"
+                  alt="کوک کردن هندپن"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 order-1 md:order-2">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  We are among the first and most experienced handpan makers in Iran — a path filled with precision, delicacy, and inspiration.
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-right" dir="rtl">
+                  ما از اولین و با تجربه‌ترین سازندگان هندپن در ایران هستیم — مسیری پر از دقت، ظرافت و الهام.
                 </p>
               </div>
             </div>
@@ -75,14 +75,14 @@ export default function About() {
             {/* Section 3 with Image */}
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  Our focus has always been on sonic clarity and the beauty of craftsmanship.
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-right" dir="rtl">
+                  تمرکز ما همیشه بر شفافیت صوتی و زیبایی ساخت بوده است.
                 </p>
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src="/workshop pics/IMG_3790.PNG"
-                  alt="Handpan detail"
+                  alt="جزئیات هندپن"
                   fill
                   className="object-cover"
                 />
@@ -94,14 +94,14 @@ export default function About() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden order-2 md:order-1">
                 <Image
                   src="/workshop pics/IMG_3789.PNG"
-                  alt="Workshop tools"
+                  alt="ابزار کارگاه"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 order-1 md:order-2">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  Every Vanda instrument is the result of hours of listening, touching, and breathing life into metal.
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-right" dir="rtl">
+                  هر ساز واندا نتیجه ساعت‌ها شنیدن، لمس کردن و دمیدن روح در فلز است.
                 </p>
               </div>
             </div>
@@ -109,14 +109,14 @@ export default function About() {
             {/* Section 5 with Image */}
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  Today, Vanda proudly plays alongside the finest musicians in Iran — a sound that comes from within and plays for the soul.
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed text-right" dir="rtl">
+                  امروز، واندا با افتخار در کنار بهترین نوازندگان ایران می‌نوازد — صدایی که از درون می‌آید و برای روح می‌نوازد.
                 </p>
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src="/workshop pics/IMG_3791.PNG"
-                  alt="Finished handpans"
+                  alt="هندپن‌های تکمیل شده"
                   fill
                   className="object-cover"
                 />

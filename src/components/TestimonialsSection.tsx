@@ -10,31 +10,31 @@ export default function TestimonialsSection() {
 
     const testimonials = [
         {
-            name: "Sarah Chen",
-            role: "Yoga Instructor",
+            name: "سارا چن",
+            role: "مربی یوگا",
             image: "/7.webp",
-            text: "My Vanda handpan has become an essential part of my meditation practice. The resonance and clarity are absolutely incredible.",
+            text: "هندپن واندا من به بخش ضروری تمرین مدیتیشن من تبدیل شده است. طنین و شفافیت آن کاملاً باورنکردنی است.",
             rating: 5
         },
         {
-            name: "Marcus Thompson",
-            role: "Music Therapist",
+            name: "مارکوس تامپسون",
+            role: "موسیقی درمانگر",
             image: "/8.webp",
-            text: "I use Vanda handpans in my therapy sessions. The quality and healing properties of these instruments are unmatched.",
+            text: "من از هندپن‌های واندا در جلسات درمانی خود استفاده می‌کنم. کیفیت و خواص درمانی این سازها بی‌نظیر است.",
             rating: 5
         },
         {
-            name: "Elena Rodriguez",
-            role: "Sound Healer",
+            name: "النا رودریگز",
+            role: "درمانگر با صدا",
             image: "/9.webp",
-            text: "The craftsmanship is extraordinary. Each note resonates with pure emotion and creates the perfect atmosphere for healing.",
+            text: "استادکاری فوق‌العاده است. هر نت با احساس خالص طنین‌انداز می‌شود و فضای مناسبی برای شفا ایجاد می‌کند.",
             rating: 5
         },
         {
-            name: "David Kim",
-            role: "Professional Musician",
+            name: "دیوید کیم",
+            role: "نوازنده حرفه‌ای",
             image: "/10.webp",
-            text: "As a touring musician, I need instruments I can rely on. Vanda handpans deliver consistent quality and beautiful tone every time.",
+            text: "به عنوان یک نوازنده تور، من به سازهایی نیاز دارم که بتوانم به آنها تکیه کنم. هندپن‌های واندا کیفیت ثابت و صدای زیبایی را هر بار ارائه می‌دهند.",
             rating: 5
         }
     ];
@@ -77,15 +77,15 @@ export default function TestimonialsSection() {
                     <h2
                         className={`text-5xl lg:text-6xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
-                        style={{ fontFamily: "'Waterfall', cursive" }}
+                        style={{ fontFamily: "var(--font-lalezar), cursive" }}
                     >
-                        What Our Artists Say
+                        آنچه هنرمندان ما می‌گویند
                     </h2>
                     <p
                         className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                     >
-                        Join thousands of musicians, therapists, and spiritual practitioners who trust Vanda handpans for their musical journey.
+                        به هزاران نوازنده، درمانگر و تمرین‌کننده معنوی بپیوندید که برای سفر موسیقایی خود به هندپن‌های واندا اعتماد کرده‌اند.
                     </p>
                 </div>
 
@@ -156,20 +156,20 @@ export default function TestimonialsSection() {
                         }`}
                 >
                     <div className="text-center bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                        <div className="text-3xl font-bold text-yellow-400 mb-2">2000+</div>
-                        <div className="text-gray-300">Happy Customers</div>
+                        <div className="text-3xl font-bold text-yellow-400 mb-2">۲۰۰۰+</div>
+                        <div className="text-gray-300">مشتری راضی</div>
                     </div>
                     <div className="text-center bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                        <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
-                        <div className="text-gray-300">Countries Shipped</div>
+                        <div className="text-3xl font-bold text-yellow-400 mb-2">۵۰+</div>
+                        <div className="text-gray-300">کشور مقصد ارسال</div>
                     </div>
                     <div className="text-center bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                        <div className="text-3xl font-bold text-yellow-400 mb-2">15+</div>
-                        <div className="text-gray-300">Scale Options</div>
+                        <div className="text-3xl font-bold text-yellow-400 mb-2">۱۵+</div>
+                        <div className="text-gray-300">گزینه گام</div>
                     </div>
                     <div className="text-center bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-                        <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
-                        <div className="text-gray-300">Handcrafted</div>
+                        <div className="text-3xl font-bold text-yellow-400 mb-2">۱۰۰٪</div>
+                        <div className="text-gray-300">دست‌ساز</div>
                     </div>
                 </div>
 

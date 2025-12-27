@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types';
+import { formatPriceInFarsi } from '@/lib/utils';
 
 interface ProductCardProps {
   product: Product;
@@ -14,7 +15,6 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const images = [product.images.front, product.images.side, product.images.back, product.images.sideView];
-  const imageLabels = ['front view', '80%', '60%', 'side view'];
 
   const minSwipeDistance = 50;
 
@@ -60,7 +60,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         <Image
           src={images[currentImageIndex]}
-          alt={`${product.name} - ${imageLabels[currentImageIndex]} view`}
+          alt={`${product.name} view`}
           fill
           className="object-contain transition-all duration-500 ease-in-out"
         />
@@ -75,14 +75,13 @@ export default function ProductCard({ product }: ProductCardProps) {
                 ? 'bg-yellow-400 w-6'
                 : 'bg-white/50 hover:bg-white/70'
                 }`}
-              title={`${imageLabels[index]}`}
+              title=""
             />
           ))}
         </div>
 
         {/* Image Label */}
         <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 bg-black/30 backdrop-blur-sm text-white px-2 py-1 rounded text-xs font-medium">
-          {imageLabels[currentImageIndex]}
         </div>
       </div>
 
@@ -93,11 +92,11 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {product.features && product.features.length > 0 && (
           <div className="mb-2.5 sm:mb-3">
-            <h4 className="text-yellow-400 font-semibold mb-1 text-xs">Features:</h4>
+            <h4 className="text-yellow-400 font-semibold mb-1 text-xs">ویژگی‌ها:</h4>
             <ul className="text-gray-300 text-xs space-y-0.5">
               {product.features.slice(0, 2).map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full mr-1.5 flex-shrink-0"></span>
+                <li key={index} className="flex items-center gap-2">
+                  <span className="w-1 h-1 bg-yellow-400 rounded-full flex-shrink-0"></span>
                   <span className="text-xs">{feature}</span>
                 </li>
               ))}
@@ -108,14 +107,14 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="flex justify-between items-center">
           {product.price && (
             <span className="text-yellow-400 font-bold text-base sm:text-lg">
-              ${product.price}
+              {formatPriceInFarsi(product.price)}
             </span>
           )}
           <Link
             href={`/products/${product.id}`}
             className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-gray-900 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base font-semibold transition-all duration-200 shadow-lg hover:shadow-xl touch-target"
           >
-            View Details
+            مشاهده جزئیات
           </Link>
         </div>
       </div>

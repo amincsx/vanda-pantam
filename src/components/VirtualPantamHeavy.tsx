@@ -382,12 +382,12 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50" onClick={() => setShowInfo(false)}>
                     <div className="bg-gradient-to-br from-gray-900 to-black border border-white/30 rounded-2xl p-8 max-w-2xl mx-4 shadow-2xl" onClick={(e) => e.stopPropagation()}>
                         <div className="flex justify-between items-start mb-6">
-                            <h3 className="text-2xl font-bold text-white">
-                                {productId === 1 ? 'About D Kurd Scale' :
-                                    productId === 2 ? 'About D Kurd Scale' :
-                                        productId === 3 ? 'About D Minor 12 Note Scale' :
-                                            productId === 4 ? 'About D Minor 14 Note Scale' :
-                                                'About F Major Scale'}
+                            <h3 className="text-2xl font-bold text-white" dir="rtl">
+                                {productId === 1 ? 'درباره گام دی کورد' :
+                                    productId === 2 ? 'درباره گام دی کورد' :
+                                        productId === 3 ? 'درباره گام دی مینور ۱۲ نت' :
+                                            productId === 4 ? 'درباره گام دی مینور ۱۴ نت' :
+                                                'درباره گام اف ماژور'}
                             </h3>
                             <button
                                 onClick={() => setShowInfo(false)}
@@ -400,95 +400,80 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                         </div>
                         <div className="text-gray-200 space-y-4">
                             {productId === 1 ? (
-                                <>
+                                <div dir="rtl" className="text-right space-y-4">
                                     <p>
-                                        The D Kurd is one of the most popular and beloved handpan scales. It offers a deep, meditative,
-                                        and introspective sound that resonates with many players and listeners.
+                                        دی کورد یکی از محبوب‌ترین و دوست‌داشتنی‌ترین گام‌های هندپن است. صدایی عمیق، مدیتیتیو و درون‌گرا دارد که با بسیاری از نوازندگان و شنوندگان ارتباط برقرار می‌کند.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Scale Notes:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4
+                                        <strong className="text-yellow-400">نت‌های گام:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Character:</strong> The D Kurd scale creates a mystical and emotional atmosphere,
-                                        perfect for meditation, therapeutic sessions, and expressive musical compositions.
+                                        <strong className="text-yellow-400">شخصیت:</strong> گام دی کورد فضایی عرفانی و احساسی ایجاد می‌کند که برای مدیتیشن، جلسات درمانی و قطعات موسیقی بیانگر عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Origin:</strong> This scale is derived from the Kurd/Kurdish scale family,
-                                        known for its minor, melancholic, yet uplifting qualities.
+                                        <strong className="text-yellow-400">ریشه:</strong> این گام از خانواده گام‌های کورد/کردی گرفته شده است که به ویژگی‌های مینور، مالیخولیایی و در عین حال نشاط‌آور خود شناخته می‌شود.
                                     </p>
-                                </>
+                                </div>
                             ) : productId === 2 ? (
-                                <>
+                                <div dir="rtl" className="text-right space-y-4">
                                     <p>
-                                        The C Major scale is a bright, uplifting, and versatile handpan scale. With 14 notes, it offers
-                                        an extended range perfect for complex melodies and harmonious compositions.
+                                        گام سی ماژور یک گام هندپن روشن، نشاط‌آور و همه کاره است. با ۱۴ نت، گستره‌ای وسیع برای ملودی‌های پیچیده و ترکیبات هارمونیک ارائه می‌دهد.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Scale Notes:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5 F5 A5
+                                        <strong className="text-yellow-400">نت‌های گام:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5 F5 A5
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Character:</strong> The C Major scale creates a joyful, optimistic atmosphere,
-                                        perfect for live performances, uplifting compositions, and energetic musical expressions.
+                                        <strong className="text-yellow-400">شخصیت:</strong> گام سی ماژور فضایی شاد و خوش‌بینانه ایجاد می‌کند که برای اجراهای زنده، قطعات نشاط‌آور و بیان‌های موسیقی پرانرژی عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Range:</strong> With 14 notes spanning multiple octaves,
-                                        this instrument offers exceptional melodic possibilities and harmonic richness.
+                                        <strong className="text-yellow-400">گستره:</strong> با ۱۴ نت که چندین اکتاو را پوشش می‌دهد، این ساز امکانات ملودی و غنای هارمونیک فوق‌العاده‌ای ارائه می‌دهد.
                                     </p>
-                                </>
+                                </div>
                             ) : productId === 3 ? (
-                                <>
+                                <div dir="rtl" className="text-right space-y-4">
                                     <p>
-                                        The A Minor Galaxy scale is a mystical and contemplative handpan with cosmic aesthetics.
-                                        It offers deep, emotional tones perfect for introspective and atmospheric music.
+                                        گام لا مینور گلکسی یک هندپن عرفانی و متفکرانه با زیبایی‌شناسی کیهانی است. تن‌های عمیق و احساسی را ارائه می‌دهد که برای موسیقی درون‌گرا و اتمسفریک عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Scale Notes:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4
+                                        <strong className="text-yellow-400">نت‌های گام:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Character:</strong> The A Minor Galaxy scale creates a mystical, otherworldly atmosphere,
-                                        perfect for meditation, ambient compositions, and emotional musical expressions.
+                                        <strong className="text-yellow-400">شخصیت:</strong> گام لا مینور گلکسی فضایی عرفانی و ماورایی ایجاد می‌کند که برای مدیتیشن، قطعات امبینت و بیان‌های موسیقی احساسی عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Design:</strong> Features a stunning galaxy-themed finish that reflects
-                                        the cosmic and transcendent nature of this deeply moving scale.
+                                        <strong className="text-yellow-400">طراحی:</strong> دارای پوشش خیره‌کننده با تم کهکشان است که ماهیت کیهانی و متعالی این گام عمیقاً تأثیرگذار را منعکس می‌کند.
                                     </p>
-                                </>
+                                </div>
                             ) : productId === 4 ? (
-                                <>
+                                <div dir="rtl" className="text-right space-y-4">
                                     <p>
-                                        The G Major scale is a balanced, harmonious, and therapeutic handpan scale. With 12 notes in steel construction,
-                                        it offers a warm, resonant tone perfect for peaceful and relaxing music.
+                                        گام سل ماژور یک گام هندپن متعادل، هماهنگ و درمانی است. با ۱۲ نت در ساختار فولادی، تنی گرم و طنین‌انداز ارائه می‌دهد که برای موسیقی آرام و آرامش‌بخش عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Scale Notes:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5
+                                        <strong className="text-yellow-400">نت‌های گام:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Character:</strong> The G Major scale creates a peaceful, balanced atmosphere,
-                                        ideal for therapeutic sessions, meditation, and calming musical expressions.
+                                        <strong className="text-yellow-400">شخصیت:</strong> گام سل ماژور فضایی آرام و متعادل ایجاد می‌کند که برای جلسات درمانی، مدیتیشن و بیان‌های موسیقی آرام‌بخش ایده‌آل است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Material:</strong> Crafted in steel for exceptional sustain and warm,
-                                        resonant tones that promote relaxation and healing.
+                                        <strong className="text-yellow-400">مواد:</strong> ساخته شده از فولاد برای پایداری استثنایی و تن‌های گرم و طنین‌انداز که آرامش و شفا را ترویج می‌کند.
                                     </p>
-                                </>
+                                </div>
                             ) : (
-                                <>
+                                <div dir="rtl" className="text-right space-y-4">
                                     <p>
-                                        The F Major scale is a sophisticated and refined handpan with elegant black finish. With 12 notes,
-                                        it offers rich, sophisticated tones perfect for professional performances and compositions.
+                                        گام اف ماژور یک هندپن پیچیده و ظریف با پوشش مشکی زیبا است. با ۱۲ نت، تن‌های غنی و پیچیده‌ای ارائه می‌دهد که برای اجراها و قطعات حرفه‌ای عالی است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Scale Notes:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5
+                                        <strong className="text-yellow-400">نت‌های گام:</strong> D3 / A3 Bb3 C4 D4 E4 F4 G4 A4 C5 D5 E5
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Character:</strong> The F Major scale creates an elegant, sophisticated atmosphere,
-                                        ideal for professional performances, complex compositions, and refined musical expressions.
+                                        <strong className="text-yellow-400">شخصیت:</strong> گام اف ماژور فضایی ظریف و پیچیده ایجاد می‌کند که برای اجراهای حرفه‌ای، قطعات پیچیده و بیان‌های موسیقی ظریف ایده‌آل است.
                                     </p>
                                     <p>
-                                        <strong className="text-yellow-400">Design:</strong> Features a stunning black finish that embodies
-                                        elegance and sophistication, making it a premium choice for discerning musicians.
+                                        <strong className="text-yellow-400">طراحی:</strong> دارای پوشش مشکی خیره‌کننده است که ظرافت و پیچیدگی را تجسم می‌بخشد و آن را به انتخابی ممتاز برای نوازندگان دقیق تبدیل می‌کند.
                                     </p>
-                                </>
+                                </div>
                             )}
                         </div>
                     </div>
@@ -524,7 +509,7 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                         ? 'bg-yellow-500/40 text-white cursor-not-allowed'
                         : 'bg-yellow-500/20 text-white hover:bg-yellow-500/30 border border-yellow-500/40 hover:shadow-[0_0_10px_rgba(234,179,8,0.4)]'
                         }`}
-                    title="Play all notes sequentially"
+                    title="پخش تمام نت‌ها به ترتیب"
                 >
                     <svg
                         className={`w-3 h-3 sm:w-5 sm:h-5 ${isPlayingSequence ? 'animate-pulse' : ''}`}
@@ -533,14 +518,14 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                     >
                         <path d="M8 5v14l11-7z" />
                     </svg>
-                    <span className="hidden sm:inline">{isPlayingSequence ? 'Playing...' : 'Play Scale'}</span>
+                    <span className="hidden sm:inline">{isPlayingSequence ? 'در حال پخش...' : 'پخش گام'}</span>
                 </button>
 
                 {/* About button */}
                 <button
                     onClick={() => setShowInfo(!showInfo)}
                     className="flex items-center gap-1 sm:gap-2 px-2 py-1.5 sm:px-5 sm:py-3 rounded-lg font-medium text-xs sm:text-base transition-all duration-200 bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] touch-target"
-                    title="About this instrument"
+                    title="درباره این ساز"
                 >
                     <svg
                         className="w-3 h-3 sm:w-5 sm:h-5"
@@ -551,7 +536,7 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                         <circle cx="12" cy="12" r="10" strokeWidth="2" />
                         <path d="M12 16v-4M12 8h.01" strokeWidth="2" strokeLinecap="round" />
                     </svg>
-                    <span className="hidden sm:inline">About</span>
+                    <span className="hidden sm:inline">درباره</span>
                 </button>
 
                 {/* Share button */}
@@ -559,17 +544,17 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                     onClick={() => {
                         if (navigator.share) {
                             navigator.share({
-                                title: 'Virtual Handpan - D Kurd Scale',
-                                text: 'Check out this interactive virtual handpan!',
+                                title: 'هندپن مجازی - گام دی کورد',
+                                text: 'این هندپن مجازی تعاملی را بررسی کنید!',
                                 url: window.location.href
                             }).catch(() => { });
                         } else {
                             navigator.clipboard.writeText(window.location.href);
-                            alert('Link copied to clipboard!');
+                            alert('لینک کپی شد!');
                         }
                     }}
                     className="flex items-center gap-1 sm:gap-2 px-2 py-1.5 sm:px-5 sm:py-3 rounded-lg font-medium text-xs sm:text-base transition-all duration-200 bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] touch-target"
-                    title="Share this page"
+                    title="اشتراک‌گذاری این صفحه"
                 >
                     <svg
                         className="w-3 h-3 sm:w-5 sm:h-5"
@@ -579,14 +564,14 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                     </svg>
-                    <span className="hidden sm:inline">Share</span>
+                    <span className="hidden sm:inline">اشتراک‌گذاری</span>
                 </button>
 
                 {/* Keyboard toggle button */}
                 <div className="relative">
                     {keyboardEnabled && (
                         <div className="hidden sm:block absolute bottom-full mb-2 right-0 bg-white text-black px-3 py-1.5 rounded text-sm whitespace-nowrap shadow-lg">
-                            Now you can play by your PC keyboard
+                            اکنون می‌توانید با کیبورد کامپیوتر خود بنوازید
                         </div>
                     )}
                     <button
@@ -609,7 +594,7 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                             <line x1="18" y1="10" x2="18" y2="10" strokeWidth="2" strokeLinecap="round" />
                             <line x1="8" y1="14" x2="16" y2="14" strokeWidth="2" strokeLinecap="round" />
                         </svg>
-                        <span className="hidden sm:inline">{keyboardEnabled ? 'Keyboard ON' : 'Keyboard'}</span>
+                        <span className="hidden sm:inline">{keyboardEnabled ? 'کیبورد روشن' : 'کیبورد'}</span>
                     </button>
                 </div>
             </div>
@@ -623,11 +608,11 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                                 productId === 3 ? `/black D kurd 12 note/black D kurd 12 note.webp` :
                                     productId === 4 ? `/D kurd 14 note/D kurd 14 note.webp` :
                                         `/black D kurd 12 note/black D kurd 12 note.webp`}
-                        alt={productId === 1 ? "Handpan D Minor Layout" :
-                            productId === 2 ? "Handpan D Minor Echo Layout" :
-                                productId === 3 ? "Handpan D Minor 12 Note Layout" :
-                                    productId === 4 ? "Handpan D Minor 14 Note Layout" :
-                                        "Handpan F Major Layout"}
+                        alt={productId === 1 ? "چیدمان هندپن دی مینور" :
+                            productId === 2 ? "چیدمان هندپن دی مینور اکو" :
+                                productId === 3 ? "چیدمان هندپن دی مینور ۱۲ نت" :
+                                    productId === 4 ? "چیدمان هندپن دی مینور ۱۴ نت" :
+                                        "چیدمان هندپن اف ماژور"}
                         fill
                         className="object-contain rounded-lg"
                         style={{ objectPosition: 'center top' }}

@@ -59,11 +59,11 @@ export default function Navigation() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-gray-900/90 to-black/95 backdrop-blur-xl"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
             <div className="flex flex-col items-center space-y-4 w-full max-w-xs">
-              <Link href="/order" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }} onClick={() => setIsMenuOpen(false)}>Order</Link>
-              <Link href="/gallery" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }} onClick={() => setIsMenuOpen(false)}>Gallery</Link>
-              <Link href="/about" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }} onClick={() => setIsMenuOpen(false)}>About</Link>
-              <Link href="/contact" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }} onClick={() => setIsMenuOpen(false)}>Contact</Link>
-              <Link href="/virtual-pantam" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "Inter, system-ui, -apple-system, sans-serif" }} onClick={() => setIsMenuOpen(false)}>Virtual Pantam</Link>
+              <Link href="/order" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }} onClick={() => setIsMenuOpen(false)}>سفارش</Link>
+              <Link href="/gallery" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }} onClick={() => setIsMenuOpen(false)}>گالری</Link>
+              <Link href="/about" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }} onClick={() => setIsMenuOpen(false)}>درباره ما</Link>
+              <Link href="/contact" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }} onClick={() => setIsMenuOpen(false)}>تماس</Link>
+              <Link href="/virtual-pantam" className="w-full text-center py-3 px-4 text-base text-yellow-300 hover:text-white bg-black/30 hover:bg-yellow-300/10 backdrop-blur-sm rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 transition-all duration-300 transform hover:scale-105 font-light touch-target" style={{ fontFamily: "var(--font-vazirmatn), sans-serif" }} onClick={() => setIsMenuOpen(false)}>هندپن مجازی</Link>
             </div>
           </div>
         </nav>
@@ -95,14 +95,14 @@ export default function Navigation() {
             style={{
               gap: isLargeScreen ? '1.8rem' : '1.5rem',
               fontSize: isLargeScreen ? '0.95rem' : '0.875rem', // smaller than text-base
-              fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+              fontFamily: "var(--font-vazirmatn), sans-serif"
             }}
           >
-            <Link href="/order" className="text-yellow-300 hover:text-white transition-colors duration-300">Order</Link>
-            <Link href="/gallery" className="text-yellow-300 hover:text-white transition-colors duration-300">Gallery</Link>
-            <Link href="/about" className="text-yellow-300 hover:text-white transition-colors duration-300">About</Link>
-            <Link href="/contact" className="text-yellow-300 hover:text-white transition-colors duration-300">Contact</Link>
-            <Link href="/virtual-pantam" className="text-yellow-300 hover:text-white transition-colors duration-300">Virtual Pantam</Link>
+            <Link href="/order" className="text-yellow-300 hover:text-white transition-colors duration-300">سفارش</Link>
+            <Link href="/gallery" className="text-yellow-300 hover:text-white transition-colors duration-300">گالری</Link>
+            <Link href="/about" className="text-yellow-300 hover:text-white transition-colors duration-300">درباره ما</Link>
+            <Link href="/contact" className="text-yellow-300 hover:text-white transition-colors duration-300">تماس</Link>
+            <Link href="/virtual-pantam" className="text-yellow-300 hover:text-white transition-colors duration-300">هندپن مجازی</Link>
           </div>
         </div>
       </nav>

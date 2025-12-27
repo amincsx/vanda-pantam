@@ -27,38 +27,38 @@ export default function BenefitsSection() {
 
     const benefits = [
         {
-            title: "Stress Relief & Relaxation",
-            description: "The soothing tones of handpan music naturally reduce cortisol levels and promote deep relaxation, making it an ideal tool for stress management.",
+            title: "کاهش استرس و آرامش",
+            description: "طنین‌های آرام‌بخش موسیقی هندپن به طور طبیعی سطح کورتیزول را کاهش می‌دهد و آرامش عمیق را ترویج می‌کند و آن را به ابزاری ایده‌آل برای مدیریت استرس تبدیل می‌کند.",
             icon: "",
             image: "/1.webp"
         },
         {
-            title: "Enhanced Focus & Meditation",
-            description: "The harmonic resonance helps quiet the mind, making it easier to achieve meditative states and improve concentration.",
+            title: "افزایش تمرکز و مدیتیشن",
+            description: "طنین هارمونیک به آرام کردن ذهن کمک می‌کند و دستیابی به حالت‌های مدیتیشن و بهبود تمرکز را آسان‌تر می‌کند.",
             icon: "",
             image: "/2.webp"
         },
         {
-            title: "Emotional Healing",
-            description: "Playing handpan can help process emotions, release tension, and provide a therapeutic outlet for self-expression.",
+            title: "شفای عاطفی",
+            description: "نواختن هندپن می‌تواند به پردازش احساسات، رهاسازی تنش و ارائه یک خروجی درمانی برای ابراز وجود کمک کند.",
             icon: "",
             image: "/3.webp"
         },
         {
-            title: "Creative Expression",
-            description: "The intuitive nature of handpan encourages spontaneous creativity and musical exploration, regardless of musical background.",
+            title: "بیان خلاق",
+            description: "ماهیت بصری هندپن خلاقیت خودجوش و کاوش موسیقی را تشویق می‌کند، صرف نظر از پیشینه موسیقی.",
             icon: "",
             image: "/4.webp"
         },
         {
-            title: "Community & Connection",
-            description: "Join a global community of handpan enthusiasts who share the passion for mindful music and conscious living.",
+            title: "جامعه و ارتباط",
+            description: "به جامعه جهانی علاقه‌مندان به هندپن بپیوندید که اشتیاق به موسیقی آگاهانه و زندگی آگاهانه را به اشتراک می‌گذارند.",
             icon: "",
             image: "/5.webp"
         },
         {
-            title: "Sleep & Recovery",
-            description: "The gentle frequencies can improve sleep quality and aid in physical and mental recovery processes.",
+            title: "خواب و بازیابی",
+            description: "فرکانس‌های ملایم می‌توانند کیفیت خواب را بهبود بخشند و به فرآیندهای بازیابی جسمی و ذهنی کمک کنند.",
             icon: "",
             image: "/6.webp"
         }
@@ -76,16 +76,16 @@ export default function BenefitsSection() {
                     <h2
                         className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent mb-4 sm:mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
-                        style={{ fontFamily: "'Waterfall', cursive" }}
+                        style={{ fontFamily: "var(--font-lalezar), cursive" }}
                     >
-                        Transform Your Life
+                        زندگی خود را متحول کنید
                     </h2>
                     <p
                         className={`text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                     >
-                        Discover the profound benefits of handpan music for your mental, emotional,
-                        and spiritual well-being. Science meets ancient wisdom in every note.
+                        مزایای عمیق موسیقی هندپن را برای سلامت ذهنی، عاطفی و معنوی خود کشف کنید.
+                        علم و خرد باستانی در هر نت به هم می‌رسند.
                     </p>
                 </div>
 
@@ -129,7 +129,7 @@ export default function BenefitsSection() {
                                     className={`mt-4 text-sm text-yellow-400 transition-all duration-300 ${activeCard === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                                         }`}
                                 >
-                                    Learn more about this benefit →
+                                    بیشتر بدانید →
                                 </div>
                             </div>
 

@@ -54,7 +54,7 @@ export default function WorkshopGallery() {
                         >
                             <Image
                                 src={imageObj.src}
-                                alt={imageObj.type === 'workshop' ? `Workshop moment ${index + 1}` : `Album image ${index + 1}`}
+                                alt={imageObj.type === 'workshop' ? `لحظه کارگاه ${index + 1}` : `تصویر آلبوم ${index + 1}`}
                                 fill
                                 className="object-cover transition-all duration-700 group-hover:scale-110"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -65,8 +65,8 @@ export default function WorkshopGallery() {
 
                             {/* Hover Text */}
                             <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                                <p className="text-sm font-medium">{imageObj.type === 'workshop' ? 'Workshop Moment' : 'Handpan Collection'}</p>
-                                <p className="text-xs text-yellow-200">Click to view</p>
+                                <p className="text-sm font-medium">{imageObj.type === 'workshop' ? 'لحظه‌ای در کارگاه' : 'مجموعه هندپن'}</p>
+                                <p className="text-xs text-yellow-200">برای مشاهده کلیک کنید</p>
                             </div>
 
                             {/* Shine effect */}
@@ -95,7 +95,7 @@ export default function WorkshopGallery() {
                         <div className="relative w-full h-full max-w-3xl max-h-[80vh]">
                             <Image
                                 src={allImages.find(img => img.name === selectedImage)?.src || ''}
-                                alt={allImages.find(img => img.name === selectedImage)?.type === 'workshop' ? 'Workshop moment' : 'Handpan collection'}
+                                alt={allImages.find(img => img.name === selectedImage)?.type === 'workshop' ? 'لحظه کارگاه' : 'مجموعه هندپن'}
                                 fill
                                 className="object-contain rounded-lg"
                                 sizes="90vw"
@@ -129,7 +129,7 @@ export default function WorkshopGallery() {
 
                         {/* Image counter */}
                         <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 sm:px-4 sm:py-2 bg-black/50 rounded-full text-white text-xs sm:text-sm border border-white/20">
-                            {workshopImages.indexOf(selectedImage) + 1} of {workshopImages.length}
+                            {workshopImages.indexOf(selectedImage) + 1} از {workshopImages.length}
                         </div>
                     </div>
                 </div>

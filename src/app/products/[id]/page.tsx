@@ -1,20 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '@/data/products';
 import { notFound } from 'next/navigation';
 import VirtualPantam from '@/components/VirtualPantam';
+import { formatPriceInFarsi } from '@/lib/utils';
 
 interface ProductDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const productId = parseInt(params.id);
+  const { id } = use(params);
+  const productId = parseInt(id);
   const product = products.find(p => p.id === productId);
 
   if (!product) {
@@ -25,7 +27,6 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const images = [product.images.front, product.images.side, product.images.back, product.images.sideView];
-  const imageLabels = ['front view', '80%', '60%', 'side view'];
 
   const productSongMap: Record<number, string> = {
     1: "/sounds/D kurd 9 note song.mp3",
@@ -88,7 +89,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               href="/order"
               className="inline-block py-2 text-yellow-500 hover:text-yellow-400 transition-colors duration-200 touch-target"
             >
-              ← Back to Products
+              ← بازگشت به محصولات
             </Link>
           </nav>
 
@@ -104,7 +105,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               >
                 <Image
                   src={images[currentImageIndex]}
-                  alt={`${product.name} - ${imageLabels[currentImageIndex]}`}
+                  alt={`${product.name}`}
                   fill
                   className="object-contain transition-all duration-500 ease-in-out"
                   priority
@@ -120,14 +121,13 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                         ? 'bg-yellow-400 w-8'
                         : 'bg-white/50 hover:bg-white/70 w-1.5'
                         }`}
-                      title={`${imageLabels[index]}`}
+                      title=""
                     />
                   ))}
                 </div>
 
                 {/* Image Label */}
                 <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-black/30 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-2 rounded-lg text-xs sm:text-sm font-medium">
-                  {imageLabels[currentImageIndex]}
                 </div>
               </div>
 
@@ -162,25 +162,25 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 </h1>
                 <div className="flex items-center gap-3 sm:gap-4 mb-4">
                   <span className="text-lg sm:text-xl font-bold text-yellow-400">
-                    ${product.price}
+                    {formatPriceInFarsi(product.price)}
                   </span>
                 </div>
               </div>
 
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-6">
-                <h2 className="text-base sm:text-lg font-semibold text-white mb-2">Description</h2>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                <h2 className="text-base sm:text-lg font-semibold text-white mb-2">توضیحات</h2>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-right" dir="rtl">
                   {product.description}
                 </p>
               </div>
 
               {product.features && product.features.length > 0 && (
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-6">
-                  <h2 className="text-base sm:text-lg font-semibold text-white mb-2">Features</h2>
-                  <ul className="space-y-1">
+                  <h2 className="text-base sm:text-lg font-semibold text-white mb-2">ویژگی‌ها</h2>
+                  <ul className="space-y-1" dir="rtl">
                     {product.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-gray-300 text-sm">
-                        <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mr-2 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full ml-2 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -191,7 +191,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               {/* Action Buttons */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 sm:p-6 space-y-3">
                 <a
-                  href={`https://wa.me/989196075854?text=Hi, I'm interested in ordering ${encodeURIComponent(product.name)} - $${product.price}`}
+                  href={`https://wa.me/989196075854?text=سلام، من علاقه‌مند به سفارش ${encodeURIComponent(product.name)} هستم - ${encodeURIComponent(formatPriceInFarsi(product.price))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full py-3 px-4 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 shadow-lg touch-target text-center ${product.inStock
@@ -199,16 +199,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                     : 'bg-gray-600/50 text-gray-400 cursor-not-allowed backdrop-blur-sm pointer-events-none'
                     }`}
                 >
-                  {product.inStock ? 'Order on WhatsApp' : 'Out of Stock'}
-                </a>
-
-                <a
-                  href={`https://wa.me/989196075854?text=Hi, I'd like to discuss a custom order for ${encodeURIComponent(product.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-3 px-4 border border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10 hover:border-yellow-400 rounded-lg font-semibold transition-all duration-200 backdrop-blur-sm text-sm touch-target text-center"
-                >
-                  Contact for Custom Order
+                  {product.inStock ? 'سفارش در واتس‌اپ' : 'ناموجود'}
                 </a>
               </div>
             </div>
@@ -222,7 +213,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
               {/* Audio player outside the VirtualPantam container */}
               <div className="mt-6 sm:mt-8 flex flex-col items-center">
-                <h3 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4">A Song with This Handpan</h3>
+                <h3 className="text-white text-base sm:text-lg font-semibold mb-3 sm:mb-4">یک قطعه با این هندپن</h3>
                 <div className="w-full max-w-2xl bg-transparent">
                   <audio
                     controls
@@ -240,7 +231,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                     }}
                   >
                     <source src={songSrc} type="audio/mpeg" />
-                    Your browser does not support the audio element.
+                    مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
                   </audio>
                 </div>
               </div>
@@ -253,16 +244,16 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
             <div className="mt-8 sm:mt-12 max-w-md mx-auto px-2 sm:px-0">
               <div className="bg-white/5 backdrop-blur-md border border-yellow-500/20 rounded-xl p-4">
                 <h3 className="text-base font-semibold text-white mb-2">
-                  Try Virtual Pantam
+                  امتحان پنتام مجازی
                 </h3>
                 <p className="text-gray-300 text-xs mb-2">
-                  Experience this handpan scale in our virtual instrument (coming soon)
+                  این گام هندپن را در ساز مجازی ما تجربه کنید (به زودی)
                 </p>
                 <Link
                   href="/virtual-pantam"
                   className="text-yellow-400 hover:text-yellow-300 text-xs font-medium transition-colors duration-200"
                 >
-                  Launch Virtual Pantam →
+                  اجرای پنتام مجازی →
                 </Link>
               </div>
             </div>
