@@ -6,7 +6,7 @@ export default function Order() {
   return (
     <div className="min-h-screen relative">
       {/* Simple Home Link */}
-      <div className="absolute top-4 left-4 sm:left-8 md:left-25 z-50">
+      <div className="absolute top-4 right-4 sm:right-8 md:right-25 z-50">
         <Link
           href="/"
           className="inline-flex items-center px-3 py-2 sm:px-4 sm:py-2 bg-black/40 hover:bg-yellow-500/20 backdrop-blur-md rounded-lg border border-yellow-300/20 hover:border-yellow-300/40 text-yellow-300 hover:text-white transition-all duration-300 text-sm sm:text-base touch-target"
