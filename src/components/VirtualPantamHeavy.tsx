@@ -113,53 +113,44 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
         return null;
     }
 
-    /*
-    // Initialize Web Audio API and preload all audio buffers
+    // Initialize Web Audio API with smart loading (no IDM interference)
     useEffect(() => {
-      const initAudio = async () => {
-        try {
-          // Create audio context
-          const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-          audioContextRef.current = new AudioContextClass();
-          
-          console.log('🎵 Audio Context created');
-          
-          // Load all audio files into buffers
-          const loadPromises = Object.entries(config.notes).map(async ([noteId, audioFile]) => {
+        const initAudio = async () => {
             try {
-              const audioPath = `/D kord 9 note/${audioFile}.mp3`;
-              console.log(`� Loading: ${audioPath}`);
-              
-              const response = await fetch(audioPath);
-              const arrayBuffer = await response.arrayBuffer();
-              const audioBuffer = await audioContextRef.current!.decodeAudioData(arrayBuffer);
-              
-              audioBuffersRef.current[noteId] = audioBuffer;
-              console.log(`✅ Loaded: ${noteId}`);
+                // Create audio context
+                const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+                audioContextRef.current = new AudioContextClass();
+
+                console.log('🎵 Audio Context created');
+
+                // Pre-create Audio objects for each note (doesn't trigger IDM)
+                Object.entries(config.notes).forEach(([noteId, audioFile]) => {
+                    const audioPath = `${config.audioPath}/${audioFile}.mp3`;
+                    const audio = new Audio();
+                    audio.preload = 'auto';
+                    audio.volume = 0.8;
+                    audio.src = audioPath; // This loads but doesn't trigger IDM
+                    audioBuffersRef.current[noteId] = audio as any; // Store Audio objects
+                    console.log(`🎵 Prepared: ${noteId}`);
+                });
+
+                console.log(`🎵 All audio prepared! Total: ${Object.keys(audioBuffersRef.current).length}`);
+                setIsLoading(false);
             } catch (error) {
-              console.error(`❌ Error loading ${noteId}:`, error);
+                console.error('❌ Audio initialization error:', error);
+                setIsLoading(false);
             }
-          });
-          
-          await Promise.all(loadPromises);
-          console.log(`🎵 All audio loaded! Total: ${Object.keys(audioBuffersRef.current).length}`);
-          setIsLoading(false);
-        } catch (error) {
-          console.error('❌ Audio initialization error:', error);
-          setIsLoading(false);
-        }
-      };
-  
-      initAudio();
-      
-      // Cleanup
-      return () => {
-        if (audioContextRef.current) {
-          audioContextRef.current.close();
-        }
-      };
+        };
+
+        initAudio();
+
+        // Cleanup
+        return () => {
+            if (audioContextRef.current) {
+                audioContextRef.current.close();
+            }
+        };
     }, [config]);
-    */
 
     // Optimized audio playback (no IDM interference)
     const playNote = (noteId: string) => {
@@ -428,9 +419,6 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                 <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
                     <div className="text-white text-lg" dir="rtl">آماده‌سازی سیستم صوتی...</div>
-                    <div className="text-gray-400 text-sm text-center max-w-md" dir="rtl">
-                        تنظیم پخش صوتی بهینه بدون مداخله در دانلودها
-                    </div>
                 </div>
             </div>
         );
