@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vanda-handpan.com/sitemap.xml
+Sitemap: https://vanda-pantam.com/sitemap.xml

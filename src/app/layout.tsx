@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vanda-handpan.com'),
+  metadataBase: new URL('https://vanda-pantam.com'),
   title: {
     default: "واندا هندپن - سازهای دست‌ساز لوکس | گام‌های دی کورد، سی ماژور و سفارشی",
     template: "%s | واندا هندپن"
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "فروش هندپن",
     "قیمت هندپن"
   ],
-  authors: [{ name: "Vanda Handpan", url: "https://vanda-handpan.com" }],
+  authors: [{ name: "Vanda Pantam", url: "https://vanda-pantam.com" }],
   creator: "Vanda Handpan",
   publisher: "Vanda Handpan",
   formatDetection: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "واندا هندپن - سازهای دست‌ساز لوکس",
     description: "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق. گام‌های دی کورد، سی ماژور، گلکسی لا مینور و کوک‌های سفارشی.",
-    url: "https://vanda-handpan.com",
+    url: "https://vanda-pantam.com",
     siteName: "Vanda Handpan",
     images: [
       {

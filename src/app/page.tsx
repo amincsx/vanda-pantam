@@ -98,13 +98,13 @@ export default function Home() {
             "@graph": [
               {
                 "@type": "Organization",
-                "@id": "https://vanda-handpan.com/#organization",
+                "@id": "https://vanda-pantam.com/#organization",
                 "name": "Vanda Handpan",
                 "alternateName": ["واندا هندپن", "واندا پنتام"],
-                "url": "https://vanda-handpan.com/",
+                "url": "https://vanda-pantam.com/",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://vanda-handpan.com/icon.webp"
+                  "url": "https://vanda-pantam.com/icon.webp"
                 },
                 "description": "سازهای هندپن دست‌ساز واندا، ساخته شده با دقت و عشق.",
                 "sameAs": [
@@ -120,13 +120,13 @@ export default function Home() {
               },
               {
                 "@type": "WebSite",
-                "@id": "https://vanda-handpan.com/#website",
-                "url": "https://vanda-handpan.com/",
+                "@id": "https://vanda-pantam.com/#website",
+                "url": "https://vanda-pantam.com/",
                 "name": "Vanda Handpan",
                 "alternateName": "واندا هندپن",
                 "inLanguage": "fa-IR",
                 "publisher": {
-                  "@id": "https://vanda-handpan.com/#organization"
+                  "@id": "https://vanda-pantam.com/#organization"
                 }
               }
             ]
