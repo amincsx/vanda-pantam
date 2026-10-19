@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Contact Us - Get Your Custom Handpan",
-    description: "Contact Vanda Handpan for custom orders, repairs, workshops, and inquiries. WhatsApp: +98 919 607 5854. We craft premium handpan instruments with lifetime warranty.",
+    title: "تماس با واندا هندپن | سفارش و پرسش درباره هندپن",
+    description: "برای سفارش هندپن دست‌ساز، پرسش درباره محصولات یا ارتباط با کارگاه واندا هندپن با ما تماس بگیرید. واتساپ: ۰۹۱۹۶۰۷۵۸۵۴.",
     alternates: {
-        canonical: "https://vanda-handpan.com/contact",
+        canonical: "/contact",
     },
     openGraph: {
-        title: "Contact Vanda Handpan",
-        description: "Get in touch for custom handpan orders, repairs, and workshops. Premium handmade instruments with lifetime warranty.",
-        url: "https://vanda-handpan.com/contact",
+        title: "تماس با واندا هندپن",
+        description: "راه‌های ارتباط با واندا هندپن برای سفارش و پرسش درباره سازهای دست‌ساز.",
+        url: "/contact",
     },
 };

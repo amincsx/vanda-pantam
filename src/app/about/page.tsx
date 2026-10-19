@@ -1,5 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "درباره واندا هندپن | سازنده هندپن دست‌ساز",
+  description: "با داستان واندا هندپن و فرایند ساخت سازهای دست‌ساز ما آشنا شوید؛ از آغاز کارگاه در سال ۲۰۱۷ تا ساخت و کوک هندپن.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "درباره واندا هندپن",
+    description: "داستان و کارگاه واندا هندپن، سازنده سازهای دست‌ساز.",
+    url: "/about",
+  },
+};
 
 export default function About() {
   return (

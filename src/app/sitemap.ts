@@ -1,29 +1,23 @@
 import { MetadataRoute } from 'next';
+import { products } from '@/data/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://vandapantam.com';
-    const currentDate = new Date();
+    const baseUrl = 'https://vanda-handpan.com';
+    const staticRoutes = [
+        '',
+        '/about',
+        '/contact',
+        '/gallery',
+        '/order',
+        '/virtual-pantam',
+    ];
 
     return [
-        {
-            url: baseUrl,
-            lastModified: currentDate,
-            changeFrequency: 'weekly',
-            priority: 1.0,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: currentDate,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        // Add more pages as your site grows
-        // Example:
-        // {
-        //   url: `${baseUrl}/products`,
-        //   lastModified: currentDate,
-        //   changeFrequency: 'weekly',
-        //   priority: 0.9,
-        // },
+        ...staticRoutes.map((route) => ({
+            url: `${baseUrl}${route}`,
+        })),
+        ...products.map((product) => ({
+            url: `${baseUrl}/products/${product.id}`,
+        })),
     ];
 }

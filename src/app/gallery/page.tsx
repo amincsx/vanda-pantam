@@ -1,5 +1,17 @@
 import Link from "next/link";
 import WorkshopGallery from "../../components/WorkshopGallery";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "گالری کارگاه واندا هندپن | ساخت سازهای دست‌ساز",
+  description: "تصاویر کارگاه واندا هندپن و مراحل ساخت، کوک و پرداخت سازهای دست‌ساز.",
+  alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "گالری کارگاه واندا هندپن",
+    description: "تصاویر پشت صحنه کارگاه و فرایند ساخت هندپن.",
+    url: "/gallery",
+  },
+};
 
 export default function Gallery() {
   return (

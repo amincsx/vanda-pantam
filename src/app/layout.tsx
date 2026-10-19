@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://vanda-handpan.com",
+    canonical: "/",
   },
   openGraph: {
     title: "واندا هندپن - سازهای دست‌ساز لوکس",

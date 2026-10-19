@@ -95,26 +95,41 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "واندا هندپن",
-            "description": "سازهای هندپن دست‌ساز با کیفیت عالی، ساخته شده با دقت و عشق",
-            "url": "https://vanda-handpan.com",
-            "telephone": "+989196075854",
-            "image": "https://vanda-handpan.com/icon.webp",
-            "priceRange": "$$",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "IR"
-            },
-            "sameAs": [
-              "https://www.instagram.com/vanda_pantam/",
-              "https://wa.me/989196075854"
-            ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "reviewCount": "1"
-            }
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://vanda-handpan.com/#organization",
+                "name": "Vanda Handpan",
+                "alternateName": ["واندا هندپن", "واندا پنتام"],
+                "url": "https://vanda-handpan.com/",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://vanda-handpan.com/icon.webp"
+                },
+                "description": "سازهای هندپن دست‌ساز واندا، ساخته شده با دقت و عشق.",
+                "sameAs": [
+                  "https://www.instagram.com/vanda_pantam/",
+                  "https://wa.me/989196075854"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+989196075854",
+                  "contactType": "customer service",
+                  "availableLanguage": ["Persian", "English"]
+                }
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://vanda-handpan.com/#website",
+                "url": "https://vanda-handpan.com/",
+                "name": "Vanda Handpan",
+                "alternateName": "واندا هندپن",
+                "inLanguage": "fa-IR",
+                "publisher": {
+                  "@id": "https://vanda-handpan.com/#organization"
+                }
+              }
+            ]
           })
         }}
       />

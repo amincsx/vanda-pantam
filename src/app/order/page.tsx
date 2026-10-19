@@ -1,6 +1,18 @@
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'خرید هندپن دست‌ساز | محصولات واندا',
+  description: 'مشاهده و مقایسه هندپن‌های دست‌ساز واندا در گام‌ها و تعداد نت‌های مختلف؛ جزئیات هر ساز و راهنمای سفارش را ببینید.',
+  alternates: { canonical: '/order' },
+  openGraph: {
+    title: 'خرید هندپن دست‌ساز از واندا',
+    description: 'محصولات هندپن دست‌ساز واندا را ببینید و برای سفارش هر ساز اقدام کنید.',
+    url: '/order',
+  },
+};
 
 export default function Order() {
   return (
@@ -28,7 +40,14 @@ export default function Order() {
       {/* Content layer */}
       <div className="relative z-10">
         <div className="container mx-auto px-4 pt-20 sm:pt-24 pb-8 sm:pb-12">
-
+          <header className="mb-8 text-center" dir="rtl">
+            <h1 className="mb-3 text-3xl sm:text-4xl font-bold text-yellow-200">
+              خرید هندپن دست‌ساز واندا
+            </h1>
+            <p className="mx-auto max-w-3xl text-sm sm:text-base text-gray-300">
+              مدل‌ها و گام‌های مختلف هندپن‌های واندا را ببینید و برای سفارش هر ساز جزئیات آن را بررسی کنید.
+            </p>
+          </header>
 
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
