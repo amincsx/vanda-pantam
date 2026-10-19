@@ -11,206 +11,177 @@ interface NoteMapping {
     [key: string]: string;
 }
 
+const noteConfigs: { [key: number]: { audioPath: string; notes: NoteMapping } } = {
+    1: {
+        audioPath: '/sounds',
+        notes: {
+            '_0.D_ding': '0.D 3',
+            '_1.A3': '1.A3',
+            '_1.Bb3': '2.Bb3',
+            '_1.C4': '3.C4',
+            '_1.D4': '4.D4',
+            '_1.E4': '5.E4',
+            '_1.F4': '6.F4',
+            '_1.G4': '7.G4',
+            '_1.A4': '8.A4'
+        }
+    },
+    2: {
+        audioPath: '/sounds',
+        notes: {
+            '_0.D_ding': '0.D 3',
+            '_1.A3': '1.A3',
+            '_1.Bb3': '2.Bb3',
+            '_1.C4': '3.C4',
+            '_1.D4': '4.D4',
+            '_1.E4': '5.E4',
+            '_1.F4': '6.F4',
+            '_1.G4': '7.G4',
+            '_1.A4': '8.A4'
+        }
+    },
+    3: {
+        audioPath: '/sounds',
+        notes: {
+            '_0.D_ding': '0.D 3',
+            '_1.A3': '1.A3',
+            '_1.Bb3': '2.Bb3',
+            '_1.C4': '3.C4',
+            '_1.D4': '4.D4',
+            '_1.E4': '5.E4',
+            '_1.F4': '6.F4',
+            '_1.G4': '7.G4',
+            '_1.A4': '8.A4',
+            '_1.C5': '9.C5',
+            '_1.D5': '10.D5',
+            '_1.E5': '11.E5'
+        }
+    },
+    4: {
+        audioPath: '/sounds',
+        notes: {
+            '_0.D_ding': '0.D 3',
+            '_1.A3': '1.A3',
+            '_1.Bb3': '2.Bb3',
+            '_1.C4': '3.C4',
+            '_1.D4': '4.D4',
+            '_1.E4': '5.E4',
+            '_1.F4': '6.F4',
+            '_1.G4': '7.G4',
+            '_1.A4': '8.A4',
+            '_1.C5': '9.C5',
+            '_1.D5': '10.D5',
+            '_1.E5': '11.E5',
+            '_1.F5': '12.F5',
+            '_1.A5': '13.A5'
+        }
+    },
+    6: {
+        audioPath: '/sounds',
+        notes: {
+            '_0.D_ding': '0.D 3',
+            '_1.A3': '1.A3',
+            '_1.Bb3': '2.Bb3',
+            '_1.C4': '3.C4',
+            '_1.D4': '4.D4',
+            '_1.E4': '5.E4',
+            '_1.F4': '6.F4',
+            '_1.G4': '7.G4',
+            '_1.A4': '8.A4',
+            '_1.C5': '9.C5',
+            '_1.D5': '10.D5',
+            '_1.E5': '11.E5'
+        }
+    }
+};
+
 export default function VirtualPantam({ productId }: VirtualPantamProps) {
     const [activeNote, setActiveNote] = useState<string | null>(null);
     const [keyboardEnabled, setKeyboardEnabled] = useState(false);
     const [isPlayingSequence, setIsPlayingSequence] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [audioError, setAudioError] = useState(false);
     const svgRef = useRef<SVGSVGElement>(null);
-    const lastPlayedRef = useRef<{ [key: string]: number }>({});
     const audioContextRef = useRef<AudioContext | null>(null);
     const audioBuffersRef = useRef<{ [key: string]: AudioBuffer }>({});
-
-    // Note mappings for each product - all audio files now in /sounds folder
-    const noteConfigs: { [key: number]: { audioPath: string; notes: NoteMapping } } = {
-        1: {
-            audioPath: '/sounds',
-            notes: {
-                '_0.D_ding': '0.D 3',
-                '_1.A3': '1.A3',
-                '_1.Bb3': '2.Bb3',
-                '_1.C4': '3.C4',
-                '_1.D4': '4.D4',
-                '_1.E4': '5.E4',
-                '_1.F4': '6.F4',
-                '_1.G4': '7.G4',
-                '_1.A4': '8.A4'
-            }
-        },
-        2: {
-            audioPath: '/sounds',
-            notes: {
-                '_0.D_ding': '0.D 3',
-                '_1.A3': '1.A3',
-                '_1.Bb3': '2.Bb3',
-                '_1.C4': '3.C4',
-                '_1.D4': '4.D4',
-                '_1.E4': '5.E4',
-                '_1.F4': '6.F4',
-                '_1.G4': '7.G4',
-                '_1.A4': '8.A4'
-            }
-        },
-        3: {
-            audioPath: '/sounds',
-            notes: {
-                '_0.D_ding': '0.D 3',
-                '_1.A3': '1.A3',
-                '_1.Bb3': '2.Bb3',
-                '_1.C4': '3.C4',
-                '_1.D4': '4.D4',
-                '_1.E4': '5.E4',
-                '_1.F4': '6.F4',
-                '_1.G4': '7.G4',
-                '_1.A4': '8.A4',
-                '_1.C5': '9.C5',
-                '_1.D5': '10.D5',
-                '_1.E5': '11.E5'
-            }
-        },
-        4: {
-            audioPath: '/sounds',
-            notes: {
-                '_0.D_ding': '0.D 3',
-                '_1.A3': '1.A3',
-                '_1.Bb3': '2.Bb3',
-                '_1.C4': '3.C4',
-                '_1.D4': '4.D4',
-                '_1.E4': '5.E4',
-                '_1.F4': '6.F4',
-                '_1.G4': '7.G4',
-                '_1.A4': '8.A4',
-                '_1.C5': '9.C5',
-                '_1.D5': '10.D5',
-                '_1.E5': '11.E5',
-                '_1.F5': '12.F5',
-                '_1.A5': '13.A5'
-            }
-        },
-        6: {
-            audioPath: '/sounds',
-            notes: {
-                '_0.D_ding': '0.D 3',
-                '_1.A3': '1.A3',
-                '_1.Bb3': '2.Bb3',
-                '_1.C4': '3.C4',
-                '_1.D4': '4.D4',
-                '_1.E4': '5.E4',
-                '_1.F4': '6.F4',
-                '_1.G4': '7.G4',
-                '_1.A4': '8.A4',
-                '_1.C5': '9.C5',
-                '_1.D5': '10.D5',
-                '_1.E5': '11.E5'
-            }
-        }
-    };
-
     const config = noteConfigs[productId];
 
-    if (!config) {
-        return null;
-    }
-
-    // Initialize Web Audio API with smart loading (no IDM interference)
     useEffect(() => {
-        const initAudio = async () => {
+        if (!config) {
+            setIsLoading(false);
+            return;
+        }
+
+        let cancelled = false;
+        const context = new AudioContext();
+        audioContextRef.current = context;
+        audioBuffersRef.current = {};
+        setIsLoading(true);
+        setAudioError(false);
+
+        const loadBuffers = async () => {
             try {
-                // Create audio context
-                const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
-                audioContextRef.current = new AudioContextClass();
+                const entries = await Promise.all(
+                    Object.entries(config.notes).map(async ([noteId, fileName]) => {
+                        const response = await fetch(`${config.audioPath}/${encodeURIComponent(fileName)}.mp3`);
+                        if (!response.ok) {
+                            throw new Error(`Failed to load note audio: ${response.status} ${response.url}`);
+                        }
+                        const buffer = await context.decodeAudioData(await response.arrayBuffer());
+                        return [noteId, buffer] as const;
+                    })
+                );
 
-                console.log('🎵 Audio Context created');
-
-                // Pre-create Audio objects for each note (doesn't trigger IDM)
-                Object.entries(config.notes).forEach(([noteId, audioFile]) => {
-                    const audioPath = `${config.audioPath}/${audioFile}.mp3`;
-                    const audio = new Audio();
-                    audio.preload = 'auto';
-                    audio.volume = 0.8;
-                    audio.src = audioPath; // This loads but doesn't trigger IDM
-                    audioBuffersRef.current[noteId] = audio as any; // Store Audio objects
-                    console.log(`🎵 Prepared: ${noteId}`);
-                });
-
-                console.log(`🎵 All audio prepared! Total: ${Object.keys(audioBuffersRef.current).length}`);
-                setIsLoading(false);
+                if (!cancelled) {
+                    audioBuffersRef.current = Object.fromEntries(entries);
+                    setIsLoading(false);
+                }
             } catch (error) {
-                console.error('❌ Audio initialization error:', error);
-                setIsLoading(false);
+                console.error('Unable to prepare virtual handpan audio.', error);
+                if (!cancelled) {
+                    setAudioError(true);
+                    setIsLoading(false);
+                }
             }
         };
 
-        initAudio();
+        void loadBuffers();
 
-        // Cleanup
         return () => {
-            if (audioContextRef.current) {
-                audioContextRef.current.close();
-            }
+            cancelled = true;
+            audioBuffersRef.current = {};
+            audioContextRef.current = null;
+            void context.close().catch(error => {
+                console.error('Unable to close virtual handpan audio context.', error);
+            });
         };
     }, [config]);
 
-    // Optimized audio playback (no IDM interference)
     const playNote = (noteId: string) => {
-        // Debounce: prevent same note from playing within 100ms (reduced for better responsiveness)
-        const now = Date.now();
-        const lastPlayed = lastPlayedRef.current[noteId] || 0;
-        if (now - lastPlayed < 100) {
-            console.log(`⏭️ Skipping duplicate play of ${noteId}`);
-            return;
-        }
-        lastPlayedRef.current[noteId] = now;
-
-        console.log(`🎵 Playing: ${noteId}`);
-
-        // Visual feedback
         setActiveNote(noteId);
         setTimeout(() => setActiveNote(null), 150);
 
-        // Activate audio context if needed
-        activateAudioContext();
-
-        // Use pre-created Audio object for fast playback
-        const audioElement = audioBuffersRef.current[noteId] as HTMLAudioElement;
-        if (audioElement) {
-            try {
-                // Reset to beginning and play
-                audioElement.currentTime = 0;
-                const playPromise = audioElement.play();
-
-                if (playPromise !== undefined) {
-                    playPromise.catch(e => {
-                        console.error('Play error:', e);
-                        // Fallback: create new audio element
-                        const fileName = config.notes[noteId];
-                        if (fileName) {
-                            const fallbackAudio = new Audio(`${config.audioPath}/${fileName}.mp3`);
-                            fallbackAudio.volume = 0.8;
-                            fallbackAudio.play().catch(() => { });
-                        }
-                    });
-                }
-
-                console.log(`🎵 Played via optimized Audio: ${noteId}`);
-                return;
-            } catch (error) {
-                console.error('Audio playback error:', error);
-            }
-        }
-
-        // Final fallback
-        const fileName = config.notes[noteId];
-        if (!fileName) {
-            console.error(`No file for ${noteId}`);
+        const context = audioContextRef.current;
+        const buffer = audioBuffersRef.current[noteId];
+        if (!context || !buffer) {
+            console.error(`Virtual handpan audio is not ready for note: ${noteId}`);
             return;
         }
 
-        console.log(`🎵 Fallback to new Audio: ${noteId}`);
-        const audio = new Audio(`${config.audioPath}/${fileName}.mp3`);
-        audio.volume = 0.8;
-        audio.play().catch(e => console.error('Fallback play error:', e));
+        if (context.state === 'suspended') {
+            void context.resume().catch(error => {
+                console.error('Unable to resume virtual handpan audio.', error);
+            });
+        }
+
+        const source = context.createBufferSource();
+        const gain = context.createGain();
+        source.buffer = buffer;
+        gain.gain.value = 0.8;
+        source.connect(gain);
+        gain.connect(context.destination);
+        source.start();
     };
 
     // Handle audio context activation (required by browsers)
@@ -221,57 +192,6 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                 console.log('🎵 Audio Context activated');
             } catch (error) {
                 console.error('Failed to activate audio context:', error);
-            }
-        }
-    };
-
-    const handleNoteClick = (event: React.MouseEvent<SVGElement>) => {
-        // Don't process if this is actually a touch event converted to mouse
-        if ((event.nativeEvent as any).sourceCapabilities?.firesTouchEvents) {
-            return;
-        }
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        const target = event.target as SVGElement;
-        console.log('🖱️ Clicked element:', target.tagName, target.id);
-
-        // Try to find the note element
-        const noteElement = target.closest('ellipse[id*="_"]') as SVGElement;
-
-        console.log('🎯 Found note element:', noteElement?.id);
-
-        if (noteElement && noteElement.id) {
-            console.log('🎵 Attempting to play:', noteElement.id);
-            playNote(noteElement.id);
-        } else {
-            console.log('❌ No note element found from click');
-        }
-    };
-
-    // Touch event handler for mobile devices
-    const handleNoteTouch = (event: React.TouchEvent<SVGElement>) => {
-        // Prevent default to stop mouse events from firing
-        event.preventDefault();
-        event.stopPropagation();
-
-        const touch = event.touches[0];
-        if (!touch) return;
-
-        const target = document.elementFromPoint(touch.clientX, touch.clientY) as SVGElement;
-
-        if (target) {
-            console.log('👆 Touched element:', target.tagName, target.id);
-
-            // Try to find the note element
-            const noteElement = target.closest('ellipse[id*="_"]') as SVGElement;
-
-            console.log('🎯 Found note element:', noteElement?.id);
-
-            if (noteElement && noteElement.id) {
-                console.log('🎵 Attempting to play:', noteElement.id);
-                playNote(noteElement.id);
             }
         }
     };
@@ -410,9 +330,8 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [keyboardEnabled, config]);
+    }, [keyboardEnabled, config, productId]);
 
-    // Show loading state while audio is initializing
     if (isLoading) {
         return (
             <div className="bg-white/5 backdrop-blur-md border border-yellow-500/20 rounded-xl p-8 relative">
@@ -420,6 +339,14 @@ export default function VirtualPantam({ productId }: VirtualPantamProps) {
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500"></div>
                     <div className="text-white text-lg" dir="rtl">آماده‌سازی سیستم صوتی...</div>
                 </div>
+            </div>
+        );
+    }
+
+    if (!config || audioError) {
+        return (
+            <div className="bg-white/5 backdrop-blur-md border border-yellow-500/20 rounded-xl p-8 text-center text-white" dir="rtl">
+                صدای پنتام مجازی بارگذاری نشد. لطفاً صفحه را دوباره بارگذاری کنید.
             </div>
         );
     }

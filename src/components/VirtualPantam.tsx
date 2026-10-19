@@ -6,11 +6,10 @@ interface VirtualPantamProps {
     productId: number;
 }
 
+const InteractiveHandpan = lazy(() => import('./VirtualPantamHeavy'));
+
 // Lightweight component that loads full functionality immediately
 export default function VirtualPantam({ productId }: VirtualPantamProps) {
-    // Lazy load the full interactive component immediately
-    const InteractiveHandpan = lazy(() => import('./VirtualPantamHeavy'));
-
     return (
         <Suspense fallback={
             <div className="w-full h-[600px] flex items-center justify-center">
